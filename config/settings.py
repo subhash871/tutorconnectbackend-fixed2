@@ -317,8 +317,10 @@ CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = TIME_ZONE
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
-CELERY_TASK_ALWAYS_EAGER = DEBUG
-CELERY_TASK_EAGER_PROPAGATES = DEBUG
+# No separate Celery worker service is deployed, so run tasks synchronously
+# in-process instead of depending on a message broker.
+CELERY_TASK_ALWAYS_EAGER = True
+CELERY_TASK_EAGER_PROPAGATES = False
 
 # Channels Configuration (WebSocket)
 CHANNEL_LAYERS = {
