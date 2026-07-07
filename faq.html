@@ -1,0 +1,406 @@
+<!-- FAQ - TutorConnect Nepal -->
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQ | TutorConnect Nepal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-error-container": "#93000a",
+                "surface-container-high": "#dce9ff",
+                "on-primary-container": "#f4fffc",
+                "surface-dim": "#cbdbf5",
+                "on-tertiary-fixed-variant": "#773215",
+                "surface-container-low": "#eff4ff",
+                "secondary": "#4648d4",
+                "primary-container": "#008378",
+                "error": "#ba1a1a",
+                "surface-variant": "#d3e4fe",
+                "inverse-primary": "#6bd8cb",
+                "surface-container": "#e5eeff",
+                "on-primary-fixed-variant": "#005049",
+                "error-container": "#ffdad6",
+                "on-tertiary-container": "#fffbff",
+                "on-background": "#0b1c30",
+                "on-secondary-fixed-variant": "#2f2ebe",
+                "on-secondary": "#ffffff",
+                "surface-tint": "#006a61",
+                "on-secondary-fixed": "#07006c",
+                "surface-container-highest": "#d3e4fe",
+                "surface": "#f8f9ff",
+                "tertiary-fixed-dim": "#ffb59a",
+                "on-primary-fixed": "#00201d",
+                "inverse-on-surface": "#eaf1ff",
+                "tertiary-fixed": "#ffdbce",
+                "background": "#f8f9ff",
+                "surface-container-lowest": "#ffffff",
+                "primary-fixed": "#89f5e7",
+                "on-surface": "#0b1c30",
+                "tertiary-container": "#b05e3d",
+                "inverse-surface": "#213145",
+                "on-surface-variant": "#3d4947",
+                "on-error": "#ffffff",
+                "outline": "#6d7a77",
+                "tertiary": "#924628",
+                "primary": "#00685f",
+                "on-tertiary": "#ffffff",
+                "primary-fixed-dim": "#6bd8cb",
+                "on-tertiary-fixed": "#370e00",
+                "secondary-container": "#6063ee",
+                "on-primary": "#ffffff",
+                "outline-variant": "#bcc9c6",
+                "surface-bright": "#f8f9ff",
+                "on-secondary-container": "#fffbff",
+                "secondary-fixed": "#e1e0ff",
+                "secondary-fixed-dim": "#c0c1ff"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "xs": "4px",
+                "xl": "32px",
+                "container-max": "1280px",
+                "lg": "24px",
+                "md": "16px",
+                "sm": "8px",
+                "xxl": "48px",
+                "base": "8px",
+                "gutter": "24px"
+            },
+            "fontFamily": {
+                "label-md": ["Inter"],
+                "label-sm": ["Inter"],
+                "headline-sm": ["Inter"],
+                "display-lg": ["Inter"],
+                "headline-md": ["Inter"],
+                "body-lg": ["Inter"],
+                "headline-lg": ["Inter"],
+                "body-md": ["Inter"]
+            },
+            "fontSize": {
+                "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                "label-sm": ["12px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-lg": ["32px", {"lineHeight": "1.25", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, padding 0.3s ease;
+      }
+      .accordion-item.active .accordion-content {
+        max-height: 500px;
+        padding-bottom: 24px;
+      }
+      .accordion-item.active .chevron {
+        transform: rotate(180deg);
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(226, 232, 240, 0.8);
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl docked full-width top-0 sticky border-b border-outline-variant dark:border-on-surface-variant/20 shadow-sm z-50">
+<div class="flex justify-between items-center w-full px-lg md:px-xxl py-md max-w-container-max mx-auto">
+<div class="flex items-center gap-xl">
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim" href="#">TutorConnect Nepal</a>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline hover:text-primary transition-colors" href="#">Find Tutors</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline hover:text-primary transition-colors" href="#">How it Works</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline hover:text-primary transition-colors" href="#">Categories</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<button class="hidden md:block px-md py-sm rounded-lg font-label-md text-primary hover:bg-surface-container-low transition-all">Log In</button>
+<button class="px-md py-sm bg-primary text-on-primary rounded-xl font-label-md shadow-sm hover:translate-y-[-2px] transition-all active:scale-95">Join as Tutor</button>
+</div>
+</div>
+</header>
+<main class="min-h-screen">
+<!-- Hero Section -->
+<section class="relative py-xxl px-lg md:px-xxl overflow-hidden">
+<div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-fixed/20 via-surface to-surface"></div>
+<div class="max-w-container-max mx-auto text-center space-y-md">
+<span class="inline-block px-md py-xs bg-primary-container/10 text-primary border border-primary/20 rounded-full font-label-sm uppercase tracking-wider">Help Center</span>
+<h1 class="font-display-lg text-display-lg text-on-background max-w-3xl mx-auto">How can we help you today?</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Find answers to common questions about SEE prep, NEB curriculum, and digital payments on Nepal's premier tutoring marketplace.</p>
+<div class="max-w-xl mx-auto relative mt-xl">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-xxl pr-md py-md rounded-xl border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all shadow-sm" placeholder="Search for 'eSewa', 'SEE tutors', or 'Refunds'..." type="text"/>
+</div>
+</div>
+</section>
+<!-- FAQ Categories & Content -->
+<section class="max-w-container-max mx-auto px-lg md:px-xxl pb-xxl grid grid-cols-1 lg:grid-cols-12 gap-xxl">
+<!-- Sticky Sidebar Navigation -->
+<aside class="lg:col-span-3">
+<div class="sticky top-xxl space-y-sm">
+<h3 class="font-label-sm text-outline uppercase tracking-widest px-md mb-md">Categories</h3>
+<button class="w-full flex items-center gap-md px-md py-sm rounded-xl bg-primary-container text-on-primary-container font-label-md transition-all text-left" onclick="scrollToSection('students')">
+<span class="material-symbols-outlined">school</span>
+                        For Students
+                    </button>
+<button class="w-full flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high font-label-md transition-all text-left" onclick="scrollToSection('tutors')">
+<span class="material-symbols-outlined">person_pin</span>
+                        For Tutors
+                    </button>
+<button class="w-full flex items-center gap-md px-md py-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high font-label-md transition-all text-left" onclick="scrollToSection('payments')">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+                        Payments & Billing
+                    </button>
+</div>
+</aside>
+<!-- Accordion Content -->
+<div class="lg:col-span-9 space-y-xxl">
+<!-- Students Section -->
+<div class="scroll-mt-xxl" id="students">
+<div class="flex items-center gap-md mb-xl">
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[28px]">school</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">For Students</h2>
+</div>
+<div class="space-y-md">
+<!-- Accordion Item 1 -->
+<div class="accordion-item glass-card rounded-xl px-lg border border-outline-variant/30 transition-all hover:border-primary/30">
+<button class="w-full flex justify-between items-center py-lg text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-headline-sm text-headline-sm text-on-surface">Can I find specialized tutors for SEE and NEB exams?</span>
+<span class="material-symbols-outlined chevron transition-transform duration-300 text-outline">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="text-on-surface-variant leading-relaxed">
+                                    Absolutely! Most of our tutors are experts in the Nepalese curriculum. You can filter for specific subjects under the SEE (Class 10) and NEB (Class 11 & 12) categories. We have specialized tutors for Opt Maths, Physics, Accounting, and more, familiar with the latest CDC (Curriculum Development Centre) guidelines.
+                                </p>
+</div>
+</div>
+<!-- Accordion Item 2 -->
+<div class="accordion-item glass-card rounded-xl px-lg border border-outline-variant/30 transition-all hover:border-primary/30">
+<button class="w-full flex justify-between items-center py-lg text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-headline-sm text-headline-sm text-on-surface">How do I book my first trial session?</span>
+<span class="material-symbols-outlined chevron transition-transform duration-300 text-outline">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="text-on-surface-variant leading-relaxed">
+                                    Browse through tutor profiles and click on the "Book Session" button. Many tutors offer a 30-minute free trial session to discuss learning goals and teaching styles before you commit to a full package.
+                                </p>
+</div>
+</div>
+<!-- Accordion Item 3 -->
+<div class="accordion-item glass-card rounded-xl px-lg border border-outline-variant/30 transition-all hover:border-primary/30">
+<button class="w-full flex justify-between items-center py-lg text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-headline-sm text-headline-sm text-on-surface">Is there an option for home-visit tutoring in Kathmandu?</span>
+<span class="material-symbols-outlined chevron transition-transform duration-300 text-outline">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="text-on-surface-variant leading-relaxed">
+                                    Yes, TutorConnect Nepal supports both online and in-person sessions. You can filter tutors by location (Kathmandu, Lalitpur, Bhaktapur, Pokhara, etc.) and check their profile to see if they offer home-visit services.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Tutors Section -->
+<div class="scroll-mt-xxl" id="tutors">
+<div class="flex items-center gap-md mb-xl">
+<div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[28px]">person_pin</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">For Tutors</h2>
+</div>
+<div class="space-y-md">
+<div class="accordion-item glass-card rounded-xl px-lg border border-outline-variant/30 transition-all hover:border-primary/30">
+<button class="w-full flex justify-between items-center py-lg text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-headline-sm text-headline-sm text-on-surface">What documents are required to join as a tutor?</span>
+<span class="material-symbols-outlined chevron transition-transform duration-300 text-outline">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="text-on-surface-variant leading-relaxed">
+                                    To maintain high standards, we require a copy of your Citizenship (Nagarpalika/CDO issued), your highest academic degree (Transcript/Provisional), and a professional headshot. If you are teaching SEE/NEB levels, experience in those curriculums is highly preferred.
+                                </p>
+</div>
+</div>
+<div class="accordion-item glass-card rounded-xl px-lg border border-outline-variant/30 transition-all hover:border-primary/30">
+<button class="w-full flex justify-between items-center py-lg text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-headline-sm text-headline-sm text-on-surface">How much commission does TutorConnect take?</span>
+<span class="material-symbols-outlined chevron transition-transform duration-300 text-outline">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="text-on-surface-variant leading-relaxed">
+                                    We charge a flat 15% service fee on every session. This fee covers platform maintenance, marketing your profile to students across Nepal, and secure payment processing via eSewa and Khalti.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Payments Section -->
+<div class="scroll-mt-xxl" id="payments">
+<div class="flex items-center gap-md mb-xl">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[28px]">account_balance_wallet</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Payments & Billing</h2>
+</div>
+<div class="space-y-md">
+<div class="accordion-item glass-card rounded-xl px-lg border border-outline-variant/30 transition-all hover:border-primary/30">
+<button class="w-full flex justify-between items-center py-lg text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-headline-sm text-headline-sm text-on-surface">Which local payment methods are supported?</span>
+<span class="material-symbols-outlined chevron transition-transform duration-300 text-outline">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="text-on-surface-variant leading-relaxed">
+                                    We support all major Nepalese payment gateways including:
+                                    </p><ul class="list-disc ml-md mt-sm space-y-xs">
+<li>eSewa Wallet</li>
+<li>Khalti Wallet</li>
+<li>ConnectIPS</li>
+<li>Fonepay (Direct QR)</li>
+<li>Bank Transfers (NIBL, NIC Asia, Global IME)</li>
+</ul>
+<p></p>
+</div>
+</div>
+<div class="accordion-item glass-card rounded-xl px-lg border border-outline-variant/30 transition-all hover:border-primary/30">
+<button class="w-full flex justify-between items-center py-lg text-left focus:outline-none" onclick="toggleAccordion(this)">
+<span class="font-headline-sm text-headline-sm text-on-surface">How do tutors receive their payouts?</span>
+<span class="material-symbols-outlined chevron transition-transform duration-300 text-outline">expand_more</span>
+</button>
+<div class="accordion-content">
+<p class="text-on-surface-variant leading-relaxed">
+                                    Tutors can request a payout once their balance reaches NPR 2,000. Payouts are processed every Friday directly to your linked eSewa account or Bank Account. It typically takes 1-2 business days for the funds to reflect in your bank.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="bg-surface-container-low py-xxl px-lg md:px-xxl">
+<div class="max-w-4xl mx-auto glass-card p-xl md:p-xxl rounded-3xl text-center space-y-lg shadow-xl">
+<div class="flex -space-x-md justify-center mb-md">
+<img class="w-16 h-16 rounded-full border-4 border-surface object-cover" data-alt="Close up portrait of a friendly young Nepali female tutor wearing glasses and a professional blazer, smiling warmly in a bright office setting. High quality photography, soft natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEvrzb-GKViR0zem6e60Z5ZZyW3A-zGTuAqLdzU9M8UvcbqfgFso8nrPtmqJaoWd7tRNRQZDHNd7HEN87KhWpoE9U2OJPDUoxrvVY1QkGYLZhZxVBZiB-_GWI1c5YHT97-B-QVlW61CUXlq-t_1sFJn6luSyEhU9rEJ2fOEAcWAejJ8g-YiJk7BLB5xD7U2EEiJmp-6-OxblA5mBtRaZ-G4RtgeIQs2FOzp2Cz2yQc6CHPJqorjZ-XmE9pk9wR1Z74xg5qmk-sB30"/>
+<img class="w-16 h-16 rounded-full border-4 border-surface object-cover" data-alt="Portrait of a male Nepalese academic tutor with a kind expression, wearing a traditional Dhaka topi and a modern sweater. He is holding a book in a library environment with warm lighting. Professional and trustworthy aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr1kbBCRiiYpwsiBIGSnlyOsfSSj-Usxxjb-JuhbX3cDlTSiSiaS3zg4GXE3u4GZrShcSgMIYAzpL7gx7P3ftk_pcJkbdA2r7tcRGuZPaYR7E4T00LvebzM0KgGSbbf2jI8wo-ovq9hpMGrDvTjDTBXTy8Q9RtCsvVv2gLz5ta0kSTTw8fUmHbeVSCljPHVrh1qSSXAFYxvkmPJRATsw4jA_G3YfaDVG1IRRnyBcVWLGEaj8wScwCXPclaAxF5Xyc89jamJhyF_KQ"/>
+<img class="w-16 h-16 rounded-full border-4 border-surface object-cover" data-alt="A focused young Nepalese male engineering student in his early 20s, wearing casual smart attire, smiling confidently. Soft bokeh background of a modern study space with warm primary teal accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZS8E3yMVx-Q6Ncaab__mRSU0AXjL6t3DNWbz5HEMlEYoH9dGpvhrAN9XI1bb1TBxRni6zpyWYk1UtSprt5qutGZRFQm2_3s8X-bdkvQO-J0sLh6qv8Dut18UUN2CgGHlxC4CKeR2xFaBf1iU5a8sLQhF33ZRklDqRfdgxlF7PbTF8CdqJaq_3xBVVmK33vG9YOKJMuqdH4R3k21Muj-ZHC2WQm_0ESs9C8Qtb-7xfKZ9OHNb5MU8aM44pHKYnl5uYEPEb6sVRocg"/>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Still have questions?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">Our support team in Kathmandu is available 7 days a week to help you with your learning journey.</p>
+<div class="flex flex-col sm:flex-row gap-md justify-center items-center">
+<button class="w-full sm:w-auto px-xxl py-md bg-primary text-on-primary rounded-xl font-headline-sm shadow-lg hover:shadow-primary/20 transition-all flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined">chat</span>
+                        Chat with Support
+                    </button>
+<button class="w-full sm:w-auto px-xxl py-md border-2 border-primary text-primary rounded-xl font-headline-sm hover:bg-primary/5 transition-all">
+                        Email Us
+                    </button>
+</div>
+<p class="font-label-sm text-outline">Average response time: 30 minutes</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-on-surface-variant w-full border-t border-outline-variant dark:border-on-surface-variant/30">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-xl px-lg md:px-xxl py-xxl max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1 space-y-md">
+<h4 class="font-headline-md text-headline-md font-bold text-primary">TutorConnect Nepal</h4>
+<p class="text-on-surface-variant dark:text-inverse-on-surface/70 text-body-md">Empowering Nepalese students through quality 1-on-1 personalized learning.</p>
+</div>
+<div class="space-y-md">
+<h5 class="font-label-md text-on-surface font-bold uppercase tracking-widest">Platform</h5>
+<ul class="space-y-sm">
+<li><a class="text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary dark:hover:text-primary-fixed underline transition-opacity" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary dark:hover:text-primary-fixed underline transition-opacity" href="#">Safety Guide</a></li>
+<li><a class="text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary dark:hover:text-primary-fixed underline transition-opacity" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="space-y-md">
+<h5 class="font-label-md text-on-surface font-bold uppercase tracking-widest">Support</h5>
+<ul class="space-y-sm">
+<li><a class="text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary dark:hover:text-primary-fixed underline transition-opacity" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary dark:hover:text-primary-fixed underline transition-opacity" href="#">Contact Support</a></li>
+<li><a class="text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary dark:hover:text-primary-fixed underline transition-opacity" href="#">Help Center</a></li>
+</ul>
+</div>
+<div class="space-y-md">
+<h5 class="font-label-md text-on-surface font-bold uppercase tracking-widest">Office</h5>
+<p class="text-on-surface-variant dark:text-inverse-on-surface/70 text-body-md">
+                    Durbar Marg, Kathmandu<br/>
+                    Bagmati, Nepal<br/>
+                    +977 1 4XXXXXX
+                </p>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-lg md:px-xxl py-md border-t border-outline-variant/30 text-center">
+<p class="text-on-surface-variant dark:text-inverse-on-surface/50 text-label-sm">© 2024 TutorConnect Nepal. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        function toggleAccordion(button) {
+            const item = button.closest('.accordion-item');
+            const isActive = item.classList.contains('active');
+            
+            // Close all items
+            document.querySelectorAll('.accordion-item').forEach(i => {
+                i.classList.remove('active');
+            });
+            
+            // Toggle clicked item
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                
+                // Update sidebar styling
+                const sidebarButtons = document.querySelectorAll('aside button');
+                sidebarButtons.forEach(btn => {
+                    btn.classList.remove('bg-primary-container', 'text-on-primary-container');
+                    btn.classList.add('text-on-surface-variant', 'hover:bg-surface-container-high');
+                });
+                
+                event.currentTarget.classList.add('bg-primary-container', 'text-on-primary-container');
+                event.currentTarget.classList.remove('text-on-surface-variant', 'hover:bg-surface-container-high');
+            }
+        }
+
+        // Initialize first item
+        document.addEventListener('DOMContentLoaded', () => {
+            const firstItem = document.querySelector('.accordion-item');
+            if (firstItem) firstItem.classList.add('active');
+        });
+    </script>
+</body></html>

@@ -1,0 +1,81 @@
+# Core Django
+Django==5.0.1
+djangorestframework==3.14.0
+django-filter==23.5
+django-cors-headers==4.3.1
+
+# Authentication
+djangorestframework-simplejwt==5.3.1
+django-allauth==0.60.0
+
+# Database
+# psycopg2-binary is only needed for PostgreSQL (production). Local dev with
+# DEBUG=True uses SQLite and doesn't need it. It requires a C++ compiler to
+# build from source on some platforms (e.g. Windows without Visual C++ Build
+# Tools) - uncomment when you actually deploy against Postgres, or install
+# `psycopg[binary]` instead, which ships prebuilt wheels.
+# psycopg2-binary==2.9.9
+dj-database-url==2.1.0
+
+# API Documentation
+drf-spectacular==0.27.1
+drf-spectacular-sidecar==2024.1.1
+
+# Static files
+whitenoise==6.6.0
+
+# Google OAuth
+google-auth==2.27.0
+
+# Media Storage
+cloudinary==1.40.0
+django-cloudinary-storage==0.3.0
+
+# Background Tasks
+celery==5.3.6
+redis==5.0.1
+django-redis==5.4.0
+
+# Environment Variables
+python-decouple==3.8
+
+# Utilities
+python-dateutil==2.8.2
+pytz==2023.3
+# Left unpinned: 10.2.0 has no prebuilt wheel for newer Python versions
+# (3.13+) and fails to build from source without extra system libraries.
+Pillow
+
+# Testing
+pytest==7.4.4
+pytest-django==4.7.0
+pytest-cov==4.1.0
+factory-boy==3.3.0
+faker==22.0.0
+
+# Production
+gunicorn==21.2.0
+# gevent is only needed if you run gunicorn with the gevent worker class
+# (`gunicorn -k gevent ...`). It needs a C compiler to build and its pinned
+# version doesn't build on newer Python (3.13+). Uncomment and use an
+# unpinned `gevent` if you actually need it; the default sync worker in
+# gunicorn works fine without it.
+# gevent==23.9.1
+
+# Security
+django-ratelimit==4.1.0
+
+# Real-time (Channels)
+channels==4.0.0
+channels-redis==4.1.0
+daphne==4.1.0
+
+# Notifications
+django-push-notifications==3.2.0
+
+# Payment Gateways
+requests==2.32.3
+stripe==7.8.0
+
+# Monitoring
+sentry-sdk==1.40.0

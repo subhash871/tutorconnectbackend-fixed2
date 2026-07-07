@@ -1,0 +1,444 @@
+<!-- Account Settings - TutorConnect Nepal -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings | TutorConnect Nepal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .tab-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9ff;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary-fixed": "#370e00",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#d3e4fe",
+                        "primary-container": "#008378",
+                        "on-primary-container": "#f4fffc",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-high": "#dce9ff",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#6bd8cb",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#b05e3d",
+                        "secondary": "#4648d4",
+                        "on-tertiary-container": "#fffbff",
+                        "on-surface-variant": "#3d4947",
+                        "surface-container-low": "#eff4ff",
+                        "on-secondary-fixed": "#07006c",
+                        "outline": "#6d7a77",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-fixed-variant": "#773215",
+                        "surface-container-highest": "#d3e4fe",
+                        "primary": "#00685f",
+                        "on-surface": "#0b1c30",
+                        "inverse-primary": "#6bd8cb",
+                        "on-primary-fixed": "#00201d",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffdbce",
+                        "surface-tint": "#006a61",
+                        "secondary-fixed": "#e1e0ff",
+                        "primary-fixed": "#89f5e7",
+                        "on-background": "#0b1c30",
+                        "tertiary": "#924628",
+                        "surface-container": "#e5eeff",
+                        "secondary-fixed-dim": "#c0c1ff",
+                        "on-secondary-fixed-variant": "#2f2ebe",
+                        "secondary-container": "#6063ee",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "background": "#f8f9ff",
+                        "outline-variant": "#bcc9c6",
+                        "on-primary-fixed-variant": "#005049",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#fffbff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "xxl": "48px",
+                        "container-max": "1280px",
+                        "md": "16px",
+                        "gutter": "24px",
+                        "sm": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.25", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Sidebar Navigation Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low dark:bg-inverse-surface border-r border-outline-variant dark:border-on-surface-variant/10 flex flex-col py-xl px-md gap-base z-50">
+<div class="mb-xxl px-md">
+<h1 class="font-headline-sm text-headline-sm font-black text-primary">TutorConnect Nepal</h1>
+</div>
+<div class="flex items-center gap-md mb-xl px-md">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a friendly Nepalese male professor in his late 40s. He is wearing a crisp white shirt and a dark grey blazer. The background is a soft-focus library with warm wood tones. The lighting is bright and even, conveying a sense of academic reliability and professional warmth consistent with a high-end educational platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTuH8rWb6RPYblAzLbwuVGxdfBBpeqHp7Ab6-WgiuOCDRAGkHR9iRn2_cdAxeh__l_uWmVobwIXHBOwyirB35z_OL-U5RkiaKR6qsUybHKujZLS2yjwJmjqorNwH1Y5rHiZPW2TA0enmK7QhDssAMumk9E1VInkZ1SV4ETLqxw1A8m6VY_FWB9IzGirbqxcKjPsxHmQ41cpb1ZI1WcmCbF5MjdbgQCKI6mUCa0g_W3tgMNMG9VaW-PSOe-C_i1lK5xKKVLw3dzHs8"/>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Welcome back,</p>
+<p class="font-headline-sm text-headline-sm text-primary truncate">Dr. Arpan Sharma</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-md text-on-surface-variant dark:text-outline-variant px-md py-sm hover:bg-surface-container-high hover:translate-x-1 transition-all duration-200 ease-in-out font-label-md text-label-md rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-outline-variant px-md py-sm hover:bg-surface-container-high hover:translate-x-1 transition-all duration-200 ease-in-out font-label-md text-label-md rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                My Bookings
+            </a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-outline-variant px-md py-sm hover:bg-surface-container-high hover:translate-x-1 transition-all duration-200 ease-in-out font-label-md text-label-md rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                Messages
+            </a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-outline-variant px-md py-sm hover:bg-surface-container-high hover:translate-x-1 transition-all duration-200 ease-in-out font-label-md text-label-md rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+                Availability
+            </a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-outline-variant px-md py-sm hover:bg-surface-container-high hover:translate-x-1 transition-all duration-200 ease-in-out font-label-md text-label-md rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+                Payments
+            </a>
+<!-- Active State: Settings -->
+<a class="flex items-center gap-md bg-primary-container dark:bg-primary-fixed-dim/20 text-on-primary-container dark:text-primary-fixed-dim rounded-lg px-md py-sm border-l-4 border-primary font-label-md text-label-md transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="mt-auto space-y-1">
+<a class="flex items-center gap-md text-on-surface-variant dark:text-outline-variant px-md py-sm hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                Help Center
+            </a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-outline-variant px-md py-sm hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen p-xl md:p-xxl">
+<header class="mb-xl">
+<h2 class="font-display-lg text-display-lg text-on-surface mb-xs">Settings</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Manage your account details, security settings, and notifications.</p>
+</header>
+<!-- Bento Layout for Settings Tabs -->
+<div class="grid grid-cols-12 gap-lg">
+<!-- Tab Navigation (Desktop) -->
+<div class="col-span-12 lg:col-span-3">
+<div class="flex lg:flex-col overflow-x-auto gap-sm pb-md lg:pb-0">
+<button class="tab-btn flex items-center gap-md px-lg py-md rounded-xl bg-primary text-on-primary shadow-sm font-label-md text-label-md whitespace-nowrap active:scale-95 transition-all" id="btn-profile" onclick="switchTab('profile')">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+                        Profile Information
+                    </button>
+<button class="tab-btn flex items-center gap-md px-lg py-md rounded-xl bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md whitespace-nowrap active:scale-95 transition-all" id="btn-notifications" onclick="switchTab('notifications')">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                        Notifications
+                    </button>
+<button class="tab-btn flex items-center gap-md px-lg py-md rounded-xl bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md whitespace-nowrap active:scale-95 transition-all" id="btn-security" onclick="switchTab('security')">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+                        Account Security
+                    </button>
+</div>
+</div>
+<!-- Settings Content Panels -->
+<div class="col-span-12 lg:col-span-9 space-y-lg">
+<!-- Profile Panel -->
+<section class="settings-pane block" id="pane-profile">
+<div class="bg-surface-container-lowest rounded-xl p-xl border border-outline-variant shadow-sm transition-all hover:shadow-md">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-lg">Profile Information</h3>
+<div class="space-y-xl">
+<!-- Avatar Section -->
+<div class="flex flex-col md:flex-row items-center gap-xl pb-xl border-b border-outline-variant/30">
+<div class="relative group">
+<div class="w-24 h-24 rounded-2xl overflow-hidden shadow-md">
+<img class="w-full h-full object-cover" data-alt="A detailed, close-up shot of a modern workplace desk setting featuring a professional DSLR camera and a high-end lens, symbolizing creative professionalism. The lighting is soft and diffused, creating an elegant and clean academic look. The color palette consists of neutral tones with primary teal accents in the background, matching the brand's aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnq1dYNaAVPLXJsQxrP8tKAxsYKh7WPfrV0N3AyV-NLr3_hnm2qG0BJXZkl5aF54UtC-tbkMWDljw_0QR9Ju_NbcoydDhVcYYAZb0coJbnDjOLXkcNYAn5bj1pZ3DQIhAR4I5OHITcxiGjgG8BP6Bpgv5iGa_DRKsIH0RPmAY4q5OUDi0giz_gNESGcKtV3U6bJvvgObR-Qz9nmP_5VC4ozVdr0c08EhkZ0m4efMktNOTCtyqAxoN9wKghVwjVZENY_RbHWiOY5hA"/>
+</div>
+<button class="absolute -bottom-2 -right-2 bg-primary text-on-primary w-8 h-8 rounded-lg flex items-center justify-center shadow-lg active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+</button>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Profile Picture</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">JPG, GIF or PNG. Max size of 800K</p>
+<div class="flex gap-md justify-center md:justify-start">
+<button class="px-lg py-sm rounded-lg bg-primary text-on-primary font-label-md text-label-md">Upload New</button>
+<button class="px-lg py-sm rounded-lg border border-error text-error font-label-md text-label-md hover:bg-error/5 transition-colors">Delete</button>
+</div>
+</div>
+</div>
+<!-- Form Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="space-y-sm">
+<label class="font-label-md text-label-md text-on-surface-variant px-xs">Full Name</label>
+<input class="w-full bg-surface-bright border border-outline-variant rounded-xl px-lg py-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all font-body-md text-body-md" type="text" value="Arpan Sharma"/>
+</div>
+<div class="space-y-sm">
+<label class="font-label-md text-label-md text-on-surface-variant px-xs">Email Address</label>
+<input class="w-full bg-surface-bright border border-outline-variant rounded-xl px-lg py-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all font-body-md text-body-md" type="email" value="arpan.sharma@tutorconnect.np"/>
+</div>
+<div class="space-y-sm md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface-variant px-xs">Professional Bio</label>
+<textarea class="w-full bg-surface-bright border border-outline-variant rounded-xl px-lg py-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all font-body-md text-body-md" rows="4">PhD in Educational Psychology with 15+ years of experience in mentoring students for competitive exams across Nepal.</textarea>
+</div>
+<div class="space-y-sm">
+<label class="font-label-md text-label-md text-on-surface-variant px-xs">Location</label>
+<select class="w-full bg-surface-bright border border-outline-variant rounded-xl px-lg py-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all font-body-md text-body-md">
+<option>Kathmandu, Nepal</option>
+<option>Lalitpur, Nepal</option>
+<option>Pokhara, Nepal</option>
+<option>Biratnagar, Nepal</option>
+</select>
+</div>
+<div class="space-y-sm">
+<label class="font-label-md text-label-md text-on-surface-variant px-xs">Language Preference</label>
+<select class="w-full bg-surface-bright border border-outline-variant rounded-xl px-lg py-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all font-body-md text-body-md">
+<option>English / Nepali</option>
+<option>Nepali only</option>
+<option>English only</option>
+</select>
+</div>
+</div>
+<div class="flex justify-end pt-lg">
+<button class="bg-primary text-on-primary px-xl py-md rounded-xl font-label-md text-label-md shadow-sm active:scale-95 transition-all">Save Changes</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Notifications Panel -->
+<section class="settings-pane hidden" id="pane-notifications">
+<div class="bg-surface-container-lowest rounded-xl p-xl border border-outline-variant shadow-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-lg">Notification Preferences</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-xl">Control how you receive updates and activity alerts.</p>
+<div class="space-y-xl">
+<!-- Email Notifications -->
+<div class="space-y-lg">
+<h4 class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Email Notifications</h4>
+<div class="space-y-md">
+<div class="flex items-center justify-between py-md border-b border-outline-variant/20">
+<div>
+<p class="font-label-md text-label-md text-on-surface">New Booking Requests</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Get notified when a student requests a session.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between py-md border-b border-outline-variant/20">
+<div>
+<p class="font-label-md text-label-md text-on-surface">Message Alerts</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Receive emails for new chat messages from students.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between py-md">
+<div>
+<p class="font-label-md text-label-md text-on-surface">Platform Updates</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Weekly newsletters and feature announcements.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- SMS Notifications -->
+<div class="space-y-lg pt-xl">
+<h4 class="font-label-sm text-label-sm uppercase tracking-wider text-outline">SMS & Push</h4>
+<div class="space-y-md">
+<div class="flex items-center justify-between py-md border-b border-outline-variant/20">
+<div>
+<p class="font-label-md text-label-md text-on-surface">Session Reminders</p>
+<p class="font-body-md text-body-md text-on-surface-variant">SMS alerts 1 hour before scheduled sessions.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Security Panel -->
+<section class="settings-pane hidden" id="pane-security">
+<div class="bg-surface-container-lowest rounded-xl p-xl border border-outline-variant shadow-sm space-y-xl">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-lg">Account Security</h3>
+<div class="bg-surface-container-low rounded-xl p-lg border border-primary-fixed-dim/30 flex items-start gap-md mb-xl">
+<span class="material-symbols-outlined text-primary" data-icon="shield" style="font-variation-settings: 'FILL' 1;">shield</span>
+<div>
+<p class="font-label-md text-label-md text-primary">Your account is 75% secure</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Enable Two-Factor Authentication to reach 100% security.</p>
+</div>
+</div>
+</div>
+<!-- Change Password -->
+<div class="space-y-lg">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Change Password</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="space-y-sm md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface-variant px-xs">Current Password</label>
+<input class="w-full bg-surface-bright border border-outline-variant rounded-xl px-lg py-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all font-body-md text-body-md" placeholder="••••••••••••" type="password"/>
+</div>
+<div class="space-y-sm">
+<label class="font-label-md text-label-md text-on-surface-variant px-xs">New Password</label>
+<input class="w-full bg-surface-bright border border-outline-variant rounded-xl px-lg py-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all font-body-md text-body-md" type="password"/>
+</div>
+<div class="space-y-sm">
+<label class="font-label-md text-label-md text-on-surface-variant px-xs">Confirm New Password</label>
+<input class="w-full bg-surface-bright border border-outline-variant rounded-xl px-lg py-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all font-body-md text-body-md" type="password"/>
+</div>
+</div>
+<button class="bg-surface-container-highest text-primary border border-primary/20 px-lg py-sm rounded-lg font-label-md text-label-md active:scale-95 transition-all">Update Password</button>
+</div>
+<!-- 2FA Section -->
+<div class="pt-xl border-t border-outline-variant/30 flex items-center justify-between">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Two-Factor Authentication</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Add an extra layer of security to your account.</p>
+</div>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md text-label-md shadow-sm active:scale-95 transition-all">Enable 2FA</button>
+</div>
+<!-- Login History -->
+<div class="pt-xl border-t border-outline-variant/30 space-y-lg">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Recent Login Activity</h4>
+<div class="space-y-md">
+<div class="flex items-center justify-between p-md bg-surface-bright rounded-xl border border-outline-variant/20">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-outline" data-icon="laptop_mac">laptop_mac</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Chrome on macOS</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-xs">Kathmandu, Nepal • Active Now</p>
+</div>
+</div>
+<span class="bg-primary-container text-on-primary-container text-[10px] px-sm py-xs rounded font-bold uppercase tracking-wider">Current Device</span>
+</div>
+<div class="flex items-center justify-between p-md bg-surface-bright rounded-xl border border-outline-variant/20">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-outline" data-icon="smartphone">smartphone</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">iPhone 13 Pro</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-xs">Lalitpur, Nepal • 2 hours ago</p>
+</div>
+</div>
+<button class="text-error font-label-sm text-label-sm">Sign out</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Simple Footer Integrated from Shell Logic -->
+<footer class="ml-64 border-t border-outline-variant bg-surface-container-highest/30">
+<div class="max-w-container-max mx-auto px-xxl py-xl flex flex-col md:flex-row justify-between items-center gap-lg">
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 TutorConnect Nepal. All rights reserved.</p>
+<div class="flex gap-xl">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Safety Guide</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+<script>
+        function switchTab(tabId) {
+            // Hide all panes
+            const panes = document.querySelectorAll('.settings-pane');
+            panes.forEach(pane => pane.classList.add('hidden'));
+            panes.forEach(pane => pane.classList.remove('block'));
+
+            // Show selected pane
+            const targetPane = document.getElementById('pane-' + tabId);
+            targetPane.classList.remove('hidden');
+            targetPane.classList.add('block');
+
+            // Update button styles
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+                btn.classList.add('bg-surface-container-lowest', 'text-on-surface-variant', 'hover:bg-surface-container-high');
+            });
+
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant', 'hover:bg-surface-container-high');
+            activeBtn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+        }
+
+        // Add some subtle hover animations to inputs
+        document.querySelectorAll('input, select, textarea').forEach(el => {
+            el.addEventListener('focus', () => {
+                el.parentElement.querySelector('label')?.classList.add('text-primary');
+            });
+            el.addEventListener('blur', () => {
+                el.parentElement.querySelector('label')?.classList.remove('text-primary');
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,296 @@
+.import React from 'react';
+
+const ContactUs = () => {
+    return (
+        <html className="scroll-smooth" lang="en">
+            <head>
+                <meta charSet="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Contact Us - TutorConnect Nepal</title>
+                <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+                <script id="tailwind-config">
+                    {`
+                        tailwind.config = {
+                            darkMode: "class",
+                            theme: {
+                                extend: {
+                                    colors: {
+                                        "on-secondary-fixed": "#07006c",
+                                        "secondary-container": "#6063ee",
+                                        "on-secondary-fixed-variant": "#2f2ebe",
+                                        "on-error": "#ffffff",
+                                        "surface-variant": "#d3e4fe",
+                                        "inverse-surface": "#213145",
+                                        "background": "#f8f9ff",
+                                        "tertiary-fixed": "#ffdbce",
+                                        "outline-variant": "#bcc9c6",
+                                        "primary-fixed-dim": "#6bd8cb",
+                                        "on-error-container": "#93000a",
+                                        "surface-container-lowest": "#ffffff",
+                                        "tertiary-fixed-dim": "#ffb59a",
+                                        "surface-container-highest": "#d3e4fe",
+                                        "error-container": "#ffdad6",
+                                        "on-primary-fixed-variant": "#005049",
+                                        "surface-container-high": "#dce9ff",
+                                        "inverse-on-surface": "#eaf1ff",
+                                        "error": "#ba1a1a",
+                                        "primary-container": "#008378",
+                                        "surface": "#f8f9ff",
+                                        "on-primary-container": "#f4fffc",
+                                        "surface-container-low": "#eff4ff",
+                                        "on-tertiary": "#ffffff",
+                                        "tertiary": "#924628",
+                                        "inverse-primary": "#6bd8cb",
+                                        "on-secondary": "#ffffff",
+                                        "on-tertiary-fixed": "#370e00",
+                                        "secondary": "#4648d4",
+                                        "outline": "#6d7a77",
+                                        "surface-bright": "#f8f9ff",
+                                        "secondary-fixed": "#e1e0ff",
+                                        "primary-fixed": "#89f5e7",
+                                        "on-primary": "#ffffff",
+                                        "tertiary-container": "#b05e3d",
+                                        "on-surface-variant": "#3d4947",
+                                        "surface-dim": "#cbdbf5",
+                                        "on-primary-fixed": "#00201d",
+                                        "primary": "#00685f",
+                                        "on-tertiary-fixed-variant": "#773215",
+                                        "on-background": "#0b1c30",
+                                        "on-tertiary-container": "#fffbff",
+                                        "on-surface": "#0b1c30",
+                                        "surface-tint": "#006a61",
+                                        "secondary-fixed-dim": "#c0c1ff",
+                                        "surface-container": "#e5eeff",
+                                        "on-secondary-container": "#fffbff"
+                                    },
+                                    borderRadius: {
+                                        DEFAULT: "0.25rem",
+                                        lg: "0.5rem",
+                                        xl: "0.75rem",
+                                        full: "9999px"
+                                    },
+                                    spacing: {
+                                        sm: "8px",
+                                        base: "8px",
+                                        xl: "32px",
+                                        lg: "24px",
+                                        xs: "4px",
+                                        md: "16px",
+                                        gutter: "24px",
+                                        xxl: "48px",
+                                        "container-max": "1280px"
+                                    },
+                                    fontFamily: {
+                                        "display-lg": ["Inter"],
+                                        "headline-md": ["Inter"],
+                                        "display-lg-mobile": ["Inter"],
+                                        "headline-lg-mobile": ["Inter"],
+                                        "headline-lg": ["Inter"],
+                                        "body-md": ["Inter"],
+                                        "body-lg": ["Inter"],
+                                        "label-sm": ["Inter"],
+                                        "headline-sm": ["Inter"],
+                                        "label-md": ["Inter"]
+                                    },
+                                    fontSize: {
+                                        "display-lg": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+                                        "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+                                        "display-lg-mobile": ["36px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                                        "headline-lg-mobile": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+                                        "headline-lg": ["32px", { lineHeight: "1.25", fontWeight: "600" }],
+                                        "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+                                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                                        "label-sm": ["12px", { lineHeight: "1.3", fontWeight: "600" }],
+                                        "headline-sm": ["20px", { lineHeight: "1.4", fontWeight: "600" }],
+                                        "label-md": ["14px", { lineHeight: "1.4", letterSpacing: "0.01em", fontWeight: "500" }]
+                                    }
+                                }
+                            }
+                        }
+                    `}
+                </script>
+                <style>{`
+                    .material-symbols-outlined {
+                        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+                    }
+                    .glass-card {
+                        background: rgba(255, 255, 255, 0.7);
+                        backdrop-filter: blur(12px);
+                        border: 1px solid rgba(226, 232, 240, 0.8);
+                    }
+                `}</style>
+            </head>
+            <body className="bg-background text-on-surface font-body-md">
+                {/* TopNavBar */}
+                <header className="docked full-width top-0 sticky z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b border-outline-variant dark:border-on-surface-variant/20 shadow-sm">
+                    <nav className="flex justify-between items-center w-full px-lg md:px-xxl py-md max-w-container-max mx-auto">
+                        <div className="flex items-center gap-xl">
+                            <a className="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim" href="#">TutorConnect Nepal</a>
+                            <div className="hidden md:flex gap-lg">
+                                <a className="font-body-md text-body-md text-on-surface-variant dark:text-outline hover:text-primary transition-colors" href="#">Find Tutors</a>
+                                <a className="font-body-md text-body-md text-on-surface-variant dark:text-outline hover:text-primary transition-colors" href="#">How it Works</a>
+                                <a className="font-body-md text-body-md text-on-surface-variant dark:text-outline hover:text-primary transition-colors" href="#">Categories</a>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-md">
+                            <a className="hidden sm:block text-on-surface-variant hover:text-primary transition-all font-body-md" href="#">Log In</a>
+                            <button className="bg-primary text-on-primary px-lg py-sm rounded-xl font-body-md font-semibold hover:bg-primary-container active:scale-95 transition-all duration-150 shadow-sm">Join as Tutor</button>
+                        </div>
+                    </nav>
+                </header>
+                <main className="max-w-container-max mx-auto px-lg md:px-xxl py-xxl">
+                    {/* Hero Section */}
+                    <section className="mb-xxl text-center max-w-2xl mx-auto">
+                        <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg mb-md text-on-surface">Get in touch with us</h1>
+                        <p className="font-body-lg text-body-lg text-on-surface-variant">Have questions about our tutoring platform? Whether you're a student seeking guidance or a professional educator, our team in Kathmandu is here to support your academic journey.</p>
+                    </section>
+                    {/* Split Contact Layout */}
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-xl items-start">
+                        {/* Contact Form Side */}
+                        <div className="lg:col-span-7 bg-surface-container-lowest p-lg md:p-xl rounded-xl border border-outline-variant shadow-sm transition-all hover:shadow-md">
+                            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-xl text-primary">Send us a message</h2>
+                            <form className="space-y-lg" id="contactForm">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
+                                    <div className="space-y-xs">
+                                        <label className="font-label-md text-label-md text-on-surface-variant" htmlFor="name">Full Name</label>
+                                        <input className="w-full px-md py-md rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none bg-surface" id="name" name="name" placeholder="Arpan Sharma" required type="text" />
+                                    </div>
+                                    <div className="space-y-xs">
+                                        <label className="font-label-md text-label-md text-on-surface-variant" htmlFor="email">Email Address</label>
+                                        <input className="w-full px-md py-md rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none bg-surface" id="email" name="email" placeholder="arpan@example.com" required type="email" />
+                                    </div>
+                                </div>
+                                <div className="space-y-xs">
+                                    <label className="font-label-md text-label-md text-on-surface-variant" htmlFor="subject">Subject</label>
+                                    <select className="w-full px-md py-md rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none bg-surface appearance-none" id="subject" name="subject">
+                                        <option value="general">General Inquiry</option>
+                                        <option value="tutor">Becoming a Tutor</option>
+                                        <option value="booking">Booking & Payments</option>
+                                        <option value="technical">Technical Support</option>
+                                    </select>
+                                </div>
+                                <div className="space-y-xs">
+                                    <label className="font-label-md text-label-md text-on-surface-variant" htmlFor="message">Message</label>
+                                    <textarea className="w-full px-md py-md rounded-xl border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none bg-surface resize-none" id="message" name="message" placeholder="How can we help you today?" required rows="5"></textarea>
+                                </div>
+                                <button className="w-full md:w-auto px-xxl py-md bg-primary text-on-primary rounded-xl font-headline-sm hover:bg-primary-container active:scale-95 transition-all shadow-sm" type="submit">Send Message</button>
+                            </form>
+                        </div>
+                        {/* Contact Details Side */}
+                        <div className="lg:col-span-5 space-y-lg">
+                            {/* Info Cards Bento */}
+                            <div className="grid grid-cols-1 gap-lg">
+                                <div className="bg-surface-container-low p-lg rounded-xl border border-outline-variant flex items-start gap-md group hover:translate-y-[-4px] transition-transform">
+                                    <div className="w-12 h-12 rounded-lg bg-primary-fixed-dim flex items-center justify-center text-primary shrink-0">
+                                        <span className="material-symbols-outlined">location_on</span>
+                                    </div>
+                                    <div>
+                                        <h3 className="font-headline-sm text-headline-sm text-on-surface">Office Address</h3>
+                                        <p className="text-on-surface-variant mt-xs">Lalitpur Tower, Ward No. 3,<br />Jhamsikhel, Kathmandu, Nepal</p>
+                                    </div>
+                                </div>
+                                <div className="bg-surface-container-low p-lg rounded-xl border border-outline-variant flex items-start gap-md group hover:translate-y-[-4px] transition-transform">
+                                    <div className="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary shrink-0">
+                                        <span className="material-symbols-outlined">call</span>
+                                    </div>
+                                    <div>
+                                        <h3 className="font-headline-sm text-headline-sm text-on-surface">Phone Number</h3>
+                                        <p className="text-on-surface-variant mt-xs">+977 (01) 456-7890<br />+977 980-0000000</p>
+                                    </div>
+                                </div>
+                                <div className="bg-surface-container-low p-lg rounded-xl border border-outline-variant flex items-start gap-md group hover:translate-y-[-4px] transition-transform">
+                                    <div className="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0">
+                                        <span className="material-symbols-outlined">mail</span>
+                                    </div>
+                                    <div>
+                                        <h3 className="font-headline-sm text-headline-sm text-on-surface">Support Email</h3>
+                                        <p className="text-on-surface-variant mt-xs">hello@tutorconnect.com.np<br />support@tutorconnect.com.np</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* Map Widget */}
+                            <div className="relative h-64 w-full rounded-xl overflow-hidden border border-outline-variant shadow-sm group">
+                                <div className="absolute inset-0 bg-surface-dim flex items-center justify-center">
+                                    <img className="w-full h-full object-cover" data-alt="A clean, minimalist vector-style map of Kathmandu's Jhamsikhel area, featuring soft teal and grey roads with a prominent brand-teal pin marker. The style is professional and academic, matching the platform's teal and white color scheme with soft shadows and high-legibility labels." data-location="Kathmandu, Nepal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk3G4AI6cCNSWH-uUBrdO5ne0bdLChYClkba-WMzpaWYLWr5o8qm1th-fV4Deqg6UZ9Bu6jc4P34P1xmqCiHCBXRIRtGmeH7FZ3TXNMvOKd0Fe7PQ48j4pp1adlE1BwNm_8tDxU1grHCM-E6Do6Qn9I45JGCMjzBevIdasJmnH92cOQ8kSbz80pZ8Ac4NjGyROegU6THDehyA0z99381R4omxjtQijlZzMpJ2NYpWCbFU3nZbB5EMEeyy3TDnChQgylAyKnAvzzU0" />
+                                </div>
+                                <div className="absolute bottom-4 left-4 bg-surface/90 backdrop-blur-md px-md py-sm rounded-lg border border-outline-variant shadow-lg">
+                                    <p className="font-label-md text-label-md text-on-surface flex items-center gap-xs">
+                                        <span className="material-symbols-outlined text-primary text-sm" data-icon="directions">directions</span>
+                                        Open in Google Maps
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* FAQ Teaser Section */}
+                    <section className="mt-xxl pt-xxl border-t border-outline-variant">
+                        <div className="flex flex-col md:flex-row md:items-end justify-between gap-lg mb-xl">
+                            <div>
+                                <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Frequently Asked Questions</h2>
+                                <p className="font-body-md text-body-md text-on-surface-variant mt-sm">Quick answers to common questions about our platform.</p>
+                            </div>
+                            <a className="text-primary font-bold hover:underline flex items-center gap-xs group" href="#">
+                                View all FAQs 
+                                <span className="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+                            </a>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-lg">
+                            <div className="p-lg bg-surface-container rounded-xl border border-transparent hover:border-primary-fixed-dim transition-all">
+                                <h3 className="font-headline-sm text-headline-sm text-on-surface mb-sm">How do I book a session?</h3>
+                                <p className="text-on-surface-variant font-body-md">Browse our category of tutors, select a profile you like, and use their integrated calendar to book an available slot instantly.</p>
+                            </div>
+                            <div className="p-lg bg-surface-container rounded-xl border border-transparent hover:border-primary-fixed-dim transition-all">
+                                <h3 className="font-headline-sm text-headline-sm text-on-surface mb-sm">What are the payment methods?</h3>
+                                <p className="text-on-surface-variant font-body-md">We support major local wallets like eSewa and Khalti, along with direct bank transfers and international card payments.</p>
+                            </div>
+                            <div className="p-lg bg-surface-container rounded-xl border border-transparent hover:border-primary-fixed-dim transition-all">
+                                <h3 className="font-headline-sm text-headline-sm text-on-surface mb-sm">Can I cancel my booking?</h3>
+                                <p className="text-on-surface-variant font-body-md">Yes, cancellations are allowed up to 24 hours before the session starts for a full refund back to your platform wallet.</p>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+                {/* Footer */}
+                <footer className="bg-surface-container-highest dark:bg-on-surface-variant border-t border-outline-variant dark:border-on-surface-variant/30">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-xl px-lg md:px-xxl py-xxl max-w-container-max mx-auto">
+                        <div className="md:col-span-1 space-y-md">
+                            <h2 className="font-headline-md text-headline-md font-bold text-primary">TutorConnect</h2>
+                            <p className="text-on-surface-variant dark:text-inverse-on-surface/70 font-body-md">Empowering Nepali students through accessible, professional mentorship and academic excellence.</p>
+                        </div>
+                        <div>
+                            <h4 className="font-label-md text-label-md text-primary mb-md uppercase tracking-wider">Quick Links</h4>
+                            <ul className="space-y-sm">
+                                <li><a className="text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary transition-all hover:underline" href="#">About Us</a></li>
+                                <li><a className="text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary transition-all hover:underline" href="#">Safety Guide</a></li>
+                                <li><a className="text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary transition-all hover:underline" href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="font-label-md text-label-md text-primary mb-md uppercase tracking-wider">Support</h4>
+                            <ul className="space-y-sm">
+                                <li><a className="text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary transition-all hover:underline" href="#">Terms of Service</a></li>
+                                <li><a className="text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary transition-all hover:underline" href="#">Contact Support</a></li>
+                                <li><a className="text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary transition-all hover:underline" href="#">Help Center</a></li>
+                            </ul>
+                        </div>
+                        <div className="space-y-md">
+                            <h4 className="font-label-md text-label-md text-primary mb-md uppercase tracking-wider">Newsletter</h4>
+                            <div className="flex flex-col gap-sm">
+                                <input className="bg-surface px-md py-sm rounded-lg border border-outline-variant outline-none focus:ring-2 focus:ring-primary/20" placeholder="Email address" type="email" />
+                                <button className="bg-primary text-on-primary px-md py-sm rounded-lg font-bold">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="max-w-container-max mx-auto px-lg md:px-xxl py-lg border-t border-outline-variant/30 text-center">
+                        <p className="font-body-md text-body-md text-on-surface-variant dark:text-inverse-on-surface/70">© 2024 TutorConnect Nepal. All rights reserved.</p>
+                    </div>
+                </footer>
+            </body>
+        </html>
+    );
+};
+
+export default ContactUs;

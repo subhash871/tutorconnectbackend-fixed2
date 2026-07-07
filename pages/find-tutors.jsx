@@ -1,0 +1,324 @@
+import React from 'react';
+
+const FindTutors = () => {
+    return (
+        <html className="light" lang="en">
+            <head>
+                <meta charSet="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Find Tutors | TutorConnect Nepal</title>
+                <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+                <style>{`
+                    .material-symbols-outlined {
+                        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+                        display: inline-block;
+                        line-height: 1;
+                        vertical-align: middle;
+                    }
+                    .glass-panel {
+                        backdrop-filter: blur(12px);
+                        -webkit-backdrop-filter: blur(12px);
+                    }
+                    .soft-elevation-1 {
+                        box-shadow: 0 4px 6px -1px rgba(0, 104, 95, 0.04), 0 2px 4px -2px rgba(0, 104, 95, 0.04);
+                        border: 1px solid #E2E8F0;
+                    }
+                    .soft-elevation-2 {
+                        box-shadow: 0 10px 15px -3px rgba(0, 104, 95, 0.08), 0 4px 6px -4px rgba(0, 104, 95, 0.08);
+                    }
+                    input[type="range"]::-webkit-slider-thumb {
+                        -webkit-appearance: none;
+                        appearance: none;
+                        width: 18px;
+                        height: 18px;
+                        background: #00685f;
+                        cursor: pointer;
+                        border-radius: 50%;
+                    }
+                `}</style>
+            </head>
+            <body className="bg-background text-on-background font-body-md">
+                {/* TopNavBar */}
+                <header className="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl docked full-width top-0 sticky border-b border-outline-variant dark:border-on-surface-variant/20 shadow-sm z-50">
+                    <div className="flex justify-between items-center w-full px-lg md:px-xxl py-md max-w-container-max mx-auto">
+                        <div className="flex items-center gap-xl">
+                            <span className="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">TutorConnect Nepal</span>
+                            <nav className="hidden md:flex gap-lg">
+                                <a className="font-body-md text-body-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1" href="#">Find Tutors</a>
+                                <a className="font-body-md text-body-md text-on-surface-variant dark:text-outline hover:text-primary transition-colors" href="#">How it Works</a>
+                                <a className="font-body-md text-body-md text-on-surface-variant dark:text-outline hover:text-primary transition-colors" href="#">Categories</a>
+                            </nav>
+                        </div>
+                        <div className="flex items-center gap-md">
+                            <button className="hidden lg:block font-label-md text-label-md text-primary hover:bg-surface-container-low px-md py-sm rounded-lg transition-all active:scale-95">Join as Tutor</button>
+                            <button className="bg-primary text-on-primary font-label-md text-label-md px-lg py-sm rounded-xl shadow-sm hover:translate-y-[-1px] transition-all active:scale-95">Log In</button>
+                        </div>
+                    </div>
+                </header>
+                <main className="max-w-container-max mx-auto px-lg md:px-xxl py-xl">
+                    {/* Breadcrumbs & Header */}
+                    <div className="mb-xl">
+                        <nav className="flex items-center gap-xs text-on-surface-variant font-label-sm text-label-sm mb-sm">
+                            <a className="hover:text-primary" href="#">Home</a>
+                            <span className="material-symbols-outlined text-[16px]">chevron_right</span>
+                            <span className="text-primary font-bold">Search Results</span>
+                        </nav>
+                        <div className="flex flex-col md:flex-row md:items-end justify-between gap-md">
+                            <div>
+                                <h1 className="font-headline-lg text-headline-lg text-on-surface">Available Tutors in Nepal</h1>
+                                <p className="text-on-surface-variant font-body-md text-body-md">Showing 142 highly qualified educators matching your criteria.</p>
+                            </div>
+                            <div className="flex items-center gap-md">
+                                <span className="text-label-md font-label-md text-on-surface-variant">Sort by:</span>
+                                <select className="bg-surface-container-low border-outline-variant rounded-xl px-md py-sm text-label-md font-label-md focus:ring-primary focus:border-primary">
+                                    <option>Most Relevant</option>
+                                    <option>Price: Low to High</option>
+                                    <option>Rating: Highest first</option>
+                                    <option>Experience: High to Low</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex flex-col lg:flex-row gap-xl">
+                        {/* Sidebar Filters */}
+                        <aside className="w-full lg:w-72 flex-shrink-0">
+                            <div className="bg-surface-container-lowest soft-elevation-1 rounded-xl p-lg sticky top-24">
+                                <div className="flex items-center justify-between mb-lg">
+                                    <h2 className="font-headline-sm text-headline-sm text-on-surface">Filters</h2>
+                                    <button className="text-primary font-label-sm text-label-sm hover:underline">Clear all</button>
+                                </div>
+                                {/* Subject */}
+                                <div className="mb-lg">
+                                    <label className="block font-label-md text-label-md text-on-surface mb-sm">Subject</label>
+                                    <div className="relative">
+                                        <span className="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline">search</span>
+                                        <input className="w-full pl-xl pr-md py-sm bg-background border-outline-variant rounded-lg text-body-md focus:ring-primary focus:border-primary" placeholder="e.g. Mathematics" type="text" />
+                                    </div>
+                                </div>
+                                {/* Mode */}
+                                <div className="mb-lg">
+                                    <label className="block font-label-md text-label-md text-on-surface mb-sm">Learning Mode</label>
+                                    <div className="space-y-xs">
+                                        <label className="flex items-center gap-sm cursor-pointer group">
+                                            <input checked="" className="rounded border-outline text-primary focus:ring-primary h-4 w-4" type="checkbox" />
+                                            <span className="text-label-md font-label-md text-on-surface-variant group-hover:text-primary transition-colors">Online Classes</span>
+                                        </label>
+                                        <label className="flex items-center gap-sm cursor-pointer group">
+                                            <input className="rounded border-outline text-primary focus:ring-primary h-4 w-4" type="checkbox" />
+                                            <span className="text-label-md font-label-md text-on-surface-variant group-hover:text-primary transition-colors">Physical/In-Person</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                {/* Price Range */}
+                                <div className="mb-lg">
+                                    <div className="flex justify-between items-center mb-sm">
+                                        <label className="font-label-md text-label-md text-on-surface">Hourly Rate (NPR)</label>
+                                        <span className="text-primary font-bold text-label-md">Max: 2500</span>
+                                    </div>
+                                    <input className="w-full h-2 bg-surface-container-high rounded-full appearance-none cursor-pointer" max="5000" min="300" step="100" type="range" />
+                                    <div className="flex justify-between mt-xs text-[10px] text-outline font-bold">
+                                        <span>300</span>
+                                        <span>5000+</span>
+                                    </div>
+                                </div>
+                                {/* Rating */}
+                                <div className="mb-lg">
+                                    <label className="block font-label-md text-label-md text-on-surface mb-sm">Minimum Rating</label>
+                                    <div className="flex gap-xs">
+                                        <button className="flex-1 py-xs border border-outline-variant rounded-lg hover:border-primary transition-colors text-label-sm font-label-sm">4.0+</button>
+                                        <button className="flex-1 py-xs bg-primary-container text-on-primary-container border border-primary rounded-lg text-label-sm font-label-sm">4.5+</button>
+                                        <button className="flex-1 py-xs border border-outline-variant rounded-lg hover:border-primary transition-colors text-label-sm font-label-sm">4.8+</button>
+                                    </div>
+                                </div>
+                                {/* Experience */}
+                                <div className="mb-lg">
+                                    <label className="block font-label-md text-label-md text-on-surface mb-sm">Experience</label>
+                                    <select className="w-full bg-background border-outline-variant rounded-lg px-md py-sm text-label-md">
+                                        <option>Any Experience</option>
+                                        <option>1-3 Years</option>
+                                        <option>3-5 Years</option>
+                                        <option>5+ Years</option>
+                                        <option>10+ Years</option>
+                                    </select>
+                                </div>
+                                {/* Gender */}
+                                <div className="mb-sm">
+                                    <label className="block font-label-md text-label-md text-on-surface mb-sm">Tutor Gender</label>
+                                    <div className="flex flex-wrap gap-xs">
+                                        <button className="px-md py-xs rounded-full border border-outline-variant text-label-sm font-label-sm hover:bg-surface-container hover:text-primary">Male</button>
+                                        <button className="px-md py-xs rounded-full border border-outline-variant text-label-sm font-label-sm hover:bg-surface-container hover:text-primary">Female</button>
+                                        <button className="px-md py-xs rounded-full bg-primary text-on-primary text-label-sm font-label-sm">No Preference</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </aside>
+                        {/* Main Results List */}
+                        <div className="flex-1 space-y-lg">
+                            {/* Tutor Card 1 */}
+                            <div className="bg-surface-container-lowest soft-elevation-1 rounded-xl p-lg flex flex-col md:flex-row gap-lg hover:soft-elevation-2 transition-all duration-300 group cursor-pointer border border-transparent hover:border-primary/20">
+                                <div className="relative flex-shrink-0">
+                                    <div className="w-full md:w-48 h-48 rounded-xl overflow-hidden">
+                                        <img className="w-full h-full object-cover" data-alt="A professional portrait of a male Nepalese mathematics professor in his late 40s. He is wearing a formal light blue shirt and glasses, smiling warmly in a bright, modern office with books in the background. High-key lighting emphasizes clarity and academic expertise. Soft, natural light fills the frame, creating a sense of trust and institutional reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3TP6oPc5zxVQMVfOBoobcRO_NCpogHBDZWo0BthkIq_Mjeoqc8JH1OucjapfbPE39l9wYQEHgkQMJSQdUYA9odng4M0FDhrjQoCZspEzwqLhzbJtYev80kdfYo5WQAOn9-nkRlQ4Cj42nlkCgjMXKZv2n6SmdrNm1MJJcUY_hniWhvC81rgSQePsSLm66UJLFZlIw6m-0QViTOLW20jWoDV_fPW0xS0xYyRVxI6g_ylnrbIA0L55HbrBKr05M33fWJPpvzL8eEq4" />
+                                    </div>
+                                    <div className="absolute -bottom-2 -right-2 bg-primary text-on-primary px-sm py-xs rounded-lg flex items-center gap-xs text-[10px] font-bold shadow-md">
+                                        <span className="material-symbols-outlined text-[14px]">verified</span>
+                                        VERIFIED
+                                    </div>
+                                </div>
+                                <div className="flex-1">
+                                    <div className="flex flex-col md:flex-row md:items-start justify-between gap-md mb-sm">
+                                        <div>
+                                            <h3 className="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Dr. Arpan Sharma</h3>
+                                            <div className="flex items-center gap-sm mt-xs">
+                                                <div className="flex items-center gap-xs bg-surface-container-high px-sm py-xs rounded-lg">
+                                                    <span className="material-symbols-outlined text-tertiary-container text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                                    <span className="font-label-md text-label-md text-on-surface">4.9</span>
+                                                    <span className="text-on-surface-variant font-label-sm text-label-sm">(128 reviews)</span>
+                                                </div>
+                                                <span className="text-outline text-label-sm">•</span>
+                                                <span className="text-on-surface-variant font-label-sm text-label-sm">12 Years Exp.</span>
+                                            </div>
+                                        </div>
+                                        <div className="text-right">
+                                            <p className="text-primary font-bold text-headline-sm">NPR 1,200 <span className="text-on-surface-variant text-label-sm font-normal">/hr</span></p>
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-wrap gap-xs mb-md">
+                                        <span className="px-md py-xs bg-primary-container/10 text-primary border border-primary/20 rounded-lg text-label-sm font-label-sm">Advanced Calculus</span>
+                                        <span className="px-md py-xs bg-primary-container/10 text-primary border border-primary/20 rounded-lg text-label-sm font-label-sm">Physics (NEB/A-Levels)</span>
+                                        <span className="px-md py-xs bg-primary-container/10 text-primary border border-primary/20 rounded-lg text-label-sm font-label-sm">Statistics</span>
+                                    </div>
+                                    <p className="text-on-surface-variant font-body-md text-body-md line-clamp-2 mb-lg">
+                                        PhD in Mathematical Sciences from Tribhuvan University. I specialize in helping students overcome "math anxiety" through simplified conceptual learning and rigorous practice sessions tailored for board exams...
+                                    </p>
+                                    <div className="flex items-center justify-between pt-md border-t border-outline-variant">
+                                        <div className="flex items-center gap-md text-on-surface-variant font-label-sm text-label-sm">
+                                            <span className="flex items-center gap-xs"><span className="material-symbols-outlined text-[18px]">language</span> English, Nepali, Hindi</span>
+                                            <span className="flex items-center gap-xs"><span className="material-symbols-outlined text-[18px]">location_on</span> Kathmandu / Online</span>
+                                        </div>
+                                        <button className="bg-primary text-on-primary font-label-md text-label-md px-xl py-sm rounded-xl hover:translate-y-[-2px] transition-all shadow-sm active:scale-95">View Profile</button>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* Tutor Card 2 */}
+                            <div className="bg-surface-container-lowest soft-elevation-1 rounded-xl p-lg flex flex-col md:flex-row gap-lg hover:soft-elevation-2 transition-all duration-300 group cursor-pointer border border-transparent hover:border-primary/20">
+                                <div className="relative flex-shrink-0">
+                                    <div className="w-full md:w-48 h-48 rounded-xl overflow-hidden">
+                                        <img className="w-full h-full object-cover" data-alt="A bright, friendly portrait of a female Nepalese teacher in her early 30s. She is wearing a colorful but professional sari, sitting in a modern study room filled with educational posters and soft desk lighting. She has a high-quality webcam visible on her desk, signifying a tech-savvy online tutor. The atmosphere is vibrant, welcoming, and academically encouraging." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAb0hvzIhpeC2KLaLm17sdh_-FlAZB1HSxLdmBx97GZvj2gFmyxQmzYx8LKByqDarzI-z4cXmxaTGIWKOTw1A0qJVRuQVcTGJWpY4LXdCHq3bNMD-x5UJT5ZAr7rBLuUT_toQWFFgWCdyfss7LPpgHYkGXK4xeoxQzoJR9bfCSmeWeRL5F0MeOoPRtMtR-aOuYDdyLNeCCh3iTZRYXDGbioz2q578Sga4FZo1uJ1stCgcs2jflGlJwpax8TJlx1zgvfMMMCY_oo4WU" />
+                                    </div>
+                                    <div className="absolute -bottom-2 -right-2 bg-primary text-on-primary px-sm py-xs rounded-lg flex items-center gap-xs text-[10px] font-bold shadow-md">
+                                        <span className="material-symbols-outlined text-[14px]">verified</span>
+                                        VERIFIED
+                                    </div>
+                                </div>
+                                <div className="flex-1">
+                                    <div className="flex flex-col md:flex-row md:items-start justify-between gap-md mb-sm">
+                                        <div>
+                                            <h3 className="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Ms. Sarita Adhikari</h3>
+                                            <div className="flex items-center gap-sm mt-xs">
+                                                <div className="flex items-center gap-xs bg-surface-container-high px-sm py-xs rounded-lg">
+                                                    <span className="material-symbols-outlined text-tertiary-container text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                                    <span className="font-label-md text-label-md text-on-surface">4.8</span>
+                                                    <span className="text-on-surface-variant font-label-sm text-label-sm">(94 reviews)</span>
+                                                </div>
+                                                <span className="text-outline text-label-sm">•</span>
+                                                <span className="text-on-surface-variant font-label-sm text-label-sm">6 Years Exp.</span>
+                                            </div>
+                                        </div>
+                                        <div className="text-right">
+                                            <p className="text-primary font-bold text-headline-sm">NPR 850 <span className="text-on-surface-variant text-label-sm font-normal">/hr</span></p>
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-wrap gap-xs mb-md">
+                                        <span className="px-md py-xs bg-primary-container/10 text-primary border border-primary/20 rounded-lg text-label-sm font-label-sm">Primary English</span>
+                                        <span className="px-md py-xs bg-primary-container/10 text-primary border border-primary/20 rounded-lg text-label-sm font-label-sm">Social Studies</span>
+                                        <span className="px-md py-xs bg-primary-container/10 text-primary border border-primary/20 rounded-lg text-label-sm font-label-sm">SEE Preparation</span>
+                                    </div>
+                                    <p className="text-on-surface-variant font-body-md text-body-md line-clamp-2 mb-lg">
+                                        Passionate educator specializing in foundation-level English and Social Sciences. I use interactive digital tools and storytelling methods to make learning engaging for school-level students...
+                                    </p>
+                                    <div className="flex items-center justify-between pt-md border-t border-outline-variant">
+                                        <div className="flex items-center gap-md text-on-surface-variant font-label-sm text-label-sm">
+                                            <span className="flex items-center gap-xs"><span className="material-symbols-outlined text-[18px]">language</span> English, Nepali</span>
+                                            <span className="flex items-center gap-xs"><span className="material-symbols-outlined text-[18px]">videocam</span> Online Only</span>
+                                        </div>
+                                        <button className="bg-primary text-on-primary font-label-md text-label-md px-xl py-sm rounded-xl hover:translate-y-[-2px] transition-all shadow-sm active:scale-95">View Profile</button>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* Tutor Card 3 */}
+                            <div className="bg-surface-container-lowest soft-elevation-1 rounded-xl p-lg flex flex-col md:flex-row gap-lg hover:soft-elevation-2 transition-all duration-300 group cursor-pointer border border-transparent hover:border-primary/20">
+                                <div className="relative flex-shrink-0">
+                                    <div className="w-full md:w-48 h-48 rounded-xl overflow-hidden">
+                                        <img className="w-full h-full object-cover" data-alt="A professional headshot of a young male software engineer turned tutor, wearing a smart casual polo. He is in a clean, minimalist room with a large computer monitor in the background displaying code. The lighting is crisp and cool, giving a tech-forward, modern vibe. The composition is focused and energetic, suggesting a mentor who is currently active in the tech industry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU2YAp2ybN8dYgbgsV6Z_2DDZhxzDIkv6xehKtwFxXZAj3R9HAsO5z7GuCBPfu_w8OTibqKh_JvQ1S4UJtJAbwJqJWdDBR2hu9KWXvIM7Scq9pjYe4wBGTbW9Z98fpHJ6Q-liivR284Nu88fjXBrNAkzwWxWOFIH6M4jNENA_Ixl5y4jRI3X_QU-i96NY-IC3i11I42kjHDOM8hekkTL0AnzUCWciwQb6ysvOxxIXkKzhu8xP5okXX1Zx56gvQLGj5zE3vyY5Ie88" />
+                                    </div>
+                                    <div className="absolute -bottom-2 -right-2 bg-primary text-on-primary px-sm py-xs rounded-lg flex items-center gap-xs text-[10px] font-bold shadow-md">
+                                        <span className="material-symbols-outlined text-[14px]">verified</span>
+                                        VERIFIED
+                                    </div>
+                                </div>
+                                <div className="flex-1">
+                                    <div className="flex flex-col md:flex-row md:items-start justify-between gap-md mb-sm">
+                                        <div>
+                                            <h3 className="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">Er. Bibek Thapa</h3>
+                                            <div className="flex items-center gap-sm mt-xs">
+                                                <div className="flex items-center gap-xs bg-surface-container-high px-sm py-xs rounded-lg">
+                                                    <span className="material-symbols-outlined text-tertiary-container text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                                    <span className="font-label-md text-label-md text-on-surface">5.0</span>
+                                                    <span className="text-on-surface-variant font-label-sm text-label-sm">(42 reviews)</span>
+                                                </div>
+                                                <span className="text-outline text-label-sm">•</span>
+                                                <span className="text-on-surface-variant font-label-sm text-label-sm">4 Years Exp.</span>
+                                            </div>
+                                        </div>
+                                        <div className="text-right">
+                                            <p className="text-primary font-bold text-headline-sm">NPR 1,500 <span className="text-on-surface-variant text-label-sm font-normal">/hr</span></p>
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-wrap gap-xs mb-md">
+                                        <span className="px-md py-xs bg-primary-container/10 text-primary border border-primary/20 rounded-lg text-label-sm font-label-sm">Computer Science</span>
+                                        <span className="px-md py-xs bg-primary-container/10 text-primary border border-primary/20 rounded-lg text-label-sm font-label-sm">Python Programming</span>
+                                        <span className="px-md py-xs bg-primary-container/10 text-primary border border-primary/20 rounded-lg text-label-sm font-label-sm">Data Structures</span>
+                                    </div>
+                                    <p className="text-on-surface-variant font-body-md text-body-md line-clamp-2 mb-lg">
+                                        Software Engineer at a top IT firm by day, mentor by night. I help CS students master programming fundamentals and prepare for industry interviews with real-world project guidance...
+                                    </p>
+                                    <div className="flex items-center justify-between pt-md border-t border-outline-variant">
+                                        <div className="flex items-center gap-md text-on-surface-variant font-label-sm text-label-sm">
+                                            <span className="flex items-center gap-xs"><span className="material-symbols-outlined text-[18px]">language</span> English, Nepali</span>
+                                            <span className="flex items-center gap-xs"><span className="material-symbols-outlined text-[18px]">location_on</span> Lalitpur / Online</span>
+                                        </div>
+                                        <button className="bg-primary text-on-primary font-label-md text-label-md px-xl py-sm rounded-xl hover:translate-y-[-2px] transition-all shadow-sm active:scale-95">View Profile</button>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* Empty State (Hidden by default, shown via JS logic if search results = 0) */}
+                            <div className="hidden py-xxl flex flex-col items-center justify-center text-center" id="empty-state">
+                                <div className="w-64 h-64 bg-surface-container-high rounded-full flex items-center justify-center mb-xl">
+                                    <span className="material-symbols-outlined text-[96px] text-outline">search_off</span>
+                                </div>
+                                <h3 className="font-headline-md text-headline-md text-on-surface mb-sm">No tutors found</h3>
+                                <p className="text-on-surface-variant font-body-lg text-body-lg max-w-md mx-auto mb-xl">
+                                    We couldn't find any tutors matching your current filter selection. Try broadening your search or clearing some filters.
+                                </p>
+                                <button className="bg-primary text-on-primary font-label-md text-label-md px-xxl py-md rounded-xl shadow-lg hover:soft-elevation-2 active:scale-95 transition-all">Clear All Filters</button>
+                            </div>
+                            {/* Pagination */}
+                            <div className="flex items-center justify-center gap-sm pt-xl">
+                                <button className="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-on-surface hover:bg-surface-container transition-colors">
+                                    <span className="material-symbols-outlined">chevron_left</span>
+                                </button>
+                                <button className="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-on-primary font-bold">1</button>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </body>
+        </html>
+    );
+};
+
+export default FindTutors;

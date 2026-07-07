@@ -1,0 +1,354 @@
+<!-- Student Registration - TutorConnect Nepal -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Join TutorConnect Nepal | Student Registration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary-fixed": "#370e00",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#d3e4fe",
+                        "primary-container": "#008378",
+                        "on-primary-container": "#f4fffc",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-high": "#dce9ff",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#6bd8cb",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#b05e3d",
+                        "secondary": "#4648d4",
+                        "on-tertiary-container": "#fffbff",
+                        "on-surface-variant": "#3d4947",
+                        "surface-container-low": "#eff4ff",
+                        "on-secondary-fixed": "#07006c",
+                        "outline": "#6d7a77",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-fixed-variant": "#773215",
+                        "surface-container-highest": "#d3e4fe",
+                        "primary": "#00685f",
+                        "on-surface": "#0b1c30",
+                        "inverse-primary": "#6bd8cb",
+                        "on-primary-fixed": "#00201d",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#ffdbce",
+                        "surface-tint": "#006a61",
+                        "secondary-fixed": "#e1e0ff",
+                        "primary-fixed": "#89f5e7",
+                        "on-background": "#0b1c30",
+                        "tertiary": "#924628",
+                        "surface-container": "#e5eeff",
+                        "secondary-fixed-dim": "#c0c1ff",
+                        "on-secondary-fixed-variant": "#2f2ebe",
+                        "secondary-container": "#6063ee",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "background": "#f8f9ff",
+                        "outline-variant": "#bcc9c6",
+                        "on-primary-fixed-variant": "#005049",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#fffbff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "xxl": "48px",
+                        "container-max": "1280px",
+                        "md": "16px",
+                        "gutter": "24px",
+                        "sm": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-md": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .step-transition { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .form-input-focus:focus {
+            box-shadow: 0 0 0 4px rgba(0, 104, 95, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-surface-bright text-on-surface min-h-screen flex flex-col overflow-x-hidden">
+<!-- Navigation suppressed based on "Transactional" rule for registration page -->
+<!-- Canvas prioritized for student journey -->
+<main class="flex-grow flex flex-col md:flex-row min-h-screen relative">
+<!-- Left Side: Ambient/Branding Section -->
+<section class="hidden lg:flex w-1/2 bg-primary-container relative overflow-hidden items-center justify-center p-xxl">
+<!-- Animated Background -->
+
+<div class="relative z-10 max-w-lg text-on-primary-container">
+<div class="mb-xl flex items-center gap-sm">
+<span class="material-symbols-outlined text-[48px]" style="font-variation-settings: 'FILL' 1;">school</span>
+<h1 class="font-headline-lg text-headline-lg font-bold tracking-tight">TutorConnect Nepal</h1>
+</div>
+<h2 class="font-display-lg text-display-lg mb-lg leading-tight">Empowering your academic journey in Nepal.</h2>
+<p class="font-body-lg text-body-lg opacity-90 mb-xl">Join a community of 10,000+ students achieving excellence through personalized mentorship and local expertise.</p>
+<div class="space-y-md">
+<div class="flex items-center gap-md bg-white/10 backdrop-blur-md p-md rounded-xl border border-white/20">
+<span class="material-symbols-outlined text-primary-fixed">verified_user</span>
+<p class="font-label-md text-label-md">Verified professional tutors from top institutions.</p>
+</div>
+<div class="flex items-center gap-md bg-white/10 backdrop-blur-md p-md rounded-xl border border-white/20">
+<span class="material-symbols-outlined text-primary-fixed">payments</span>
+<p class="font-label-md text-label-md">Secure, localized payment options via eSewa & Khalti.</p>
+</div>
+</div>
+</div>
+<!-- Subtle Decorative Element -->
+<div class="absolute bottom-0 right-0 p-lg">
+<img class="w-64 h-64 object-contain opacity-80" data-alt="A clean, minimalist 3D render of open textbooks and a glowing mortarboard, reflecting a professional academic theme. The lighting is soft teal and white, matching the brand identity of an educational platform. High-end aesthetic with soft shadows and premium materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwJzzd15Go8sG_qkYCxJgmT03aL8icFpkmAUFc8cVdnbTxTIDSuBobXv7JnRPj01ggLzxxOMxU0LkVmBYsgzS3RkFMg00pQo-t5o17SwcYcEH0lPMYmGpucoUXCd9ZuDgMAD_6F_TdunhE41NEP0Vkf0T8cIJiblYWEMO95V5W4V7az72im4jNr82fYMgY6EaJpd3ulid7IkANZ-OJymKq1QtFRD90aWLD6HMjeztNha7fLKd1BMPJx0yE3zlYFMAFBQSUeGIamMc"/>
+</div>
+</section>
+<!-- Right Side: Registration Form Section -->
+<section class="w-full lg:w-1/2 flex items-center justify-center p-lg md:p-xxl bg-surface-lowest">
+<div class="w-full max-w-md">
+<!-- Progress Header -->
+<div class="mb-xl">
+<div class="flex justify-between items-end mb-sm">
+<h2 class="font-headline-md text-headline-md text-primary font-bold" id="step-title">Create your account</h2>
+<span class="font-label-sm text-label-sm text-outline" id="step-counter">Step 1 of 3</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary transition-all duration-500 ease-out w-1/3" id="progress-bar"></div>
+</div>
+</div>
+<form class="space-y-lg relative" id="registration-form">
+<!-- Step 1: Personal Identity -->
+<div class="step-transition" id="step-1">
+<div class="space-y-md">
+<div class="group">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs" for="full_name">Full Name</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">person</span>
+<input class="w-full pl-[48px] pr-md py-md bg-surface-bright border border-outline-variant rounded-xl font-body-md text-body-md focus:border-primary focus:ring-0 form-input-focus transition-all outline-none" id="full_name" placeholder="Arun Thapa" type="text"/>
+</div>
+</div>
+<div class="group">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs" for="email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">mail</span>
+<input class="w-full pl-[48px] pr-md py-md bg-surface-bright border border-outline-variant rounded-xl font-body-md text-body-md focus:border-primary focus:ring-0 form-input-focus transition-all outline-none" id="email" placeholder="arun@example.com" type="email"/>
+</div>
+</div>
+</div>
+<!-- Social Sign-up Divider -->
+<div class="relative my-xl">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant"></div>
+</div>
+<div class="relative flex justify-center text-label-sm uppercase">
+<span class="bg-surface-lowest px-md text-outline">Or continue with</span>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-md py-md border border-outline-variant rounded-xl hover:bg-surface-container-low transition-all active:scale-[0.98]" type="button">
+<svg class="w-5 h-5" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+<span class="font-label-md text-label-md">Sign up with Google</span>
+</button>
+</div>
+<!-- Step 2: Contact Details (Hidden Initially) -->
+<div class="step-transition hidden opacity-0 translate-x-8" id="step-2">
+<div class="space-y-md">
+<div class="group">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs" for="phone">Phone Number</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">call</span>
+<input class="w-full pl-[48px] pr-md py-md bg-surface-bright border border-outline-variant rounded-xl font-body-md text-body-md focus:border-primary focus:ring-0 form-input-focus transition-all outline-none" id="phone" placeholder="+977 98XXXXXXXX" type="tel"/>
+</div>
+</div>
+<div class="group">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs" for="address">Region/City</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">location_on</span>
+<select class="w-full pl-[48px] pr-md py-md bg-surface-bright border border-outline-variant rounded-xl font-body-md text-body-md focus:border-primary focus:ring-0 form-input-focus transition-all outline-none appearance-none" id="address">
+<option value="">Select City</option>
+<option value="kathmandu">Kathmandu</option>
+<option value="lalitpur">Lalitpur</option>
+<option value="bhaktapur">Bhaktapur</option>
+<option value="pokhara">Pokhara</option>
+<option value="others">Other Regions</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3: Security (Hidden Initially) -->
+<div class="step-transition hidden opacity-0 translate-x-8" id="step-3">
+<div class="space-y-md">
+<div class="group">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs" for="password">Create Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-md top-1/2 -translate-y-1/2 text-outline">lock</span>
+<input class="w-full pl-[48px] pr-md py-md bg-surface-bright border border-outline-variant rounded-xl font-body-md text-body-md focus:border-primary focus:ring-0 form-input-focus transition-all outline-none" id="password" placeholder="Min. 8 characters" type="password"/>
+<button class="absolute right-md top-1/2 -translate-y-1/2 text-outline hover:text-primary" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-start gap-md pt-sm">
+<div class="pt-xs">
+<input class="w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary/20" id="terms" type="checkbox"/>
+</div>
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="terms">
+                                    I agree to the <a class="text-primary hover:underline" href="#">Terms of Service</a> and <a class="text-primary hover:underline" href="#">Privacy Policy</a> of TutorConnect Nepal.
+                                </label>
+</div>
+</div>
+</div>
+<!-- Navigation Controls -->
+<div class="flex gap-md pt-xl">
+<button class="hidden flex-1 py-md border border-outline-variant text-on-surface-variant rounded-xl font-label-md text-label-md hover:bg-surface-container-low transition-all" id="prev-btn" type="button">
+                            Back
+                        </button>
+<button class="flex-[2] py-md bg-primary text-on-primary rounded-xl font-label-md text-label-md hover:shadow-lg transition-all active:scale-[0.98]" id="next-btn" type="button">
+                            Continue
+                        </button>
+</div>
+<p class="text-center font-label-sm text-label-sm text-outline mt-lg">
+                        Already have an account? <a class="text-primary font-bold hover:underline" href="#">Log In</a>
+</p>
+</form>
+<!-- Toast Success (Hidden) -->
+<div class="hidden absolute top-xxl left-1/2 -translate-x-1/2 bg-on-surface text-surface p-lg rounded-2xl shadow-xxl flex items-center gap-md z-50" id="success-toast">
+<span class="material-symbols-outlined text-primary-fixed" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<p class="font-label-md text-label-md">Account created! Redirecting to dashboard...</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer minimized for focused transaction -->
+<footer class="bg-surface-container-highest/50 py-lg">
+<div class="max-w-container-max mx-auto px-lg flex flex-col md:flex-row justify-between items-center gap-md opacity-70">
+<p class="font-label-sm text-label-sm">© 2024 TutorConnect Nepal. Dedicated to academic growth.</p>
+<div class="flex gap-lg">
+<a class="font-label-sm text-label-sm hover:text-primary" href="#">Safety Guide</a>
+<a class="font-label-sm text-label-sm hover:text-primary" href="#">Support</a>
+</div>
+</div>
+</footer>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const steps = [
+                document.getElementById('step-1'),
+                document.getElementById('step-2'),
+                document.getElementById('step-3')
+            ];
+            const nextBtn = document.getElementById('next-btn');
+            const prevBtn = document.getElementById('prev-btn');
+            const progressBar = document.getElementById('progress-bar');
+            const stepTitle = document.getElementById('step-title');
+            const stepCounter = document.getElementById('step-counter');
+            const successToast = document.getElementById('success-toast');
+
+            let currentStep = 0;
+
+            const updateUI = () => {
+                // Update Visibility
+                steps.forEach((step, idx) => {
+                    if (idx === currentStep) {
+                        step.classList.remove('hidden');
+                        setTimeout(() => {
+                            step.classList.remove('opacity-0', 'translate-x-8');
+                            step.classList.add('opacity-100', 'translate-x-0');
+                        }, 50);
+                    } else {
+                        step.classList.add('hidden', 'opacity-0', 'translate-x-8');
+                        step.classList.remove('opacity-100', 'translate-x-0');
+                    }
+                });
+
+                // Update Progress & Text
+                const progressWidths = ['33%', '66%', '100%'];
+                const titles = ['Create your account', 'Contact Details', 'Secure your profile'];
+                
+                progressBar.style.width = progressWidths[currentStep];
+                stepTitle.innerText = titles[currentStep];
+                stepCounter.innerText = `Step ${currentStep + 1} of 3`;
+
+                // Update Buttons
+                if (currentStep === 0) {
+                    prevBtn.classList.add('hidden');
+                } else {
+                    prevBtn.classList.remove('hidden');
+                }
+
+                if (currentStep === 2) {
+                    nextBtn.innerText = 'Complete Registration';
+                } else {
+                    nextBtn.innerText = 'Continue';
+                }
+            };
+
+            nextBtn.addEventListener('click', () => {
+                if (currentStep < 2) {
+                    currentStep++;
+                    updateUI();
+                } else {
+                    // Final Submit Mock
+                    successToast.classList.remove('hidden');
+                    successToast.classList.add('flex');
+                    setTimeout(() => {
+                        window.location.reload(); // Simple reload for demo
+                    }, 3000);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentStep > 0) {
+                    currentStep--;
+                    updateUI();
+                }
+            });
+
+            // Password Visibility Toggle
+            const togglePass = document.querySelector('#step-3 button');
+            const passInput = document.querySelector('#password');
+            togglePass.addEventListener('click', () => {
+                const isPass = passInput.getAttribute('type') === 'password';
+                passInput.setAttribute('type', isPass ? 'text' : 'password');
+                togglePass.children[0].innerText = isPass ? 'visibility_off' : 'visibility';
+            });
+        });
+    </script>
+</body></html>

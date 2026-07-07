@@ -1,0 +1,541 @@
+<!-- Student Dashboard - TutorConnect -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Dashboard | TutorConnect Nepal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .dark .glass-card {
+            background: rgba(33, 49, 69, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #bcc9c6;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#3d4947",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#924628",
+                        "inverse-surface": "#213145",
+                        "primary-fixed-dim": "#6bd8cb",
+                        "background": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#2f2ebe",
+                        "on-primary-fixed-variant": "#005049",
+                        "on-tertiary-container": "#fffbff",
+                        "secondary-fixed-dim": "#c0c1ff",
+                        "on-primary-fixed": "#00201d",
+                        "surface-tint": "#006a61",
+                        "on-primary-container": "#f4fffc",
+                        "tertiary-container": "#b05e3d",
+                        "surface": "#f8f9ff",
+                        "surface-container-high": "#dce9ff",
+                        "outline-variant": "#bcc9c6",
+                        "surface-container": "#e5eeff",
+                        "primary-container": "#008378",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "primary-fixed": "#89f5e7",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-container": "#fffbff",
+                        "on-surface": "#0b1c30",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#ffdbce",
+                        "inverse-primary": "#6bd8cb",
+                        "on-tertiary-fixed": "#370e00",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#e1e0ff",
+                        "outline": "#6d7a77",
+                        "on-secondary-fixed": "#07006c",
+                        "secondary-container": "#6063ee",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#4648d4",
+                        "surface-container-low": "#eff4ff",
+                        "on-background": "#0b1c30",
+                        "on-error-container": "#93000a",
+                        "primary": "#00685f",
+                        "surface-dim": "#cbdbf5",
+                        "on-tertiary-fixed-variant": "#773215"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "xxl": "48px",
+                        "base": "8px",
+                        "lg": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.25", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background dark:bg-on-surface text-on-surface dark:text-inverse-on-surface min-h-screen">
+<!-- SideNavBar (Authority: JSON Mapping) -->
+<aside class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface-container-low dark:bg-inverse-surface border-r border-outline-variant dark:border-on-surface-variant/10 py-xl px-md gap-base z-50">
+<div class="px-md mb-xl">
+<span class="font-headline-sm text-headline-sm font-black text-primary">TutorConnect</span>
+</div>
+<div class="flex flex-col gap-sm flex-1">
+<a class="flex items-center gap-md bg-primary-container dark:bg-primary-fixed-dim/20 text-on-primary-container dark:text-primary-fixed-dim rounded-lg px-md py-sm border-l-4 border-primary transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-outline-variant px-md py-sm hover:bg-surface-container-high hover:translate-x-1 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-md text-label-md">My Bookings</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-outline-variant px-md py-sm hover:bg-surface-container-high hover:translate-x-1 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-md text-label-md">Messages</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-outline-variant px-md py-sm hover:bg-surface-container-high hover:translate-x-1 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-label-md text-label-md">Wishlist</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-outline-variant px-md py-sm hover:bg-surface-container-high hover:translate-x-1 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md">Payments</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-outline-variant px-md py-sm hover:bg-surface-container-high hover:translate-x-1 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</div>
+<div class="pt-xl border-t border-outline-variant dark:border-on-surface-variant/10 flex flex-col gap-sm">
+<a class="flex items-center gap-md text-on-surface-variant dark:text-outline-variant px-md py-sm hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-md text-label-md">Help Center</span>
+</a>
+<a class="flex items-center gap-md text-on-surface-variant dark:text-outline-variant px-md py-sm hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-64 min-h-screen flex flex-col">
+<!-- TopAppBar (Derived from JSON Hierarchy) -->
+<header class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl sticky top-0 z-40 border-b border-outline-variant dark:border-on-surface-variant/20 shadow-sm px-lg md:px-xxl py-md">
+<div class="max-w-container-max mx-auto flex justify-between items-center w-full">
+<div class="flex items-center gap-lg flex-1">
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="relative max-w-md w-full hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-md">search</span>
+<input class="w-full bg-surface-container-low dark:bg-surface-container-high rounded-full pl-10 pr-4 py-2 border-none focus:ring-2 focus:ring-primary text-body-md transition-all" placeholder="Search courses or tutors..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-all relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container rounded-full transition-all" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined dark:hidden">dark_mode</span>
+<span class="material-symbols-outlined hidden dark:block">light_mode</span>
+</button>
+<div class="flex items-center gap-sm pl-md ml-md border-l border-outline-variant/30">
+<div class="text-right hidden sm:block">
+<p class="font-label-md text-on-surface leading-tight">Abhishek Paudel</p>
+<p class="text-[10px] text-outline-variant uppercase tracking-wider font-bold">Standard Account</p>
+</div>
+<img class="w-10 h-10 rounded-full border-2 border-primary object-cover" data-alt="A professional studio headshot of a young Nepali male student with a friendly smile, wearing a clean casual shirt. The background is a soft-focus modern library setting with books and warm ambient lighting. The visual style is high-definition photography with natural skin tones and professional composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY_q0Y-X8kQ_LwLSV_OUDRTIa-D3fIT95uTNQaSW22oCUiWdDeJSAokJIi3_vsrK5Pw122WzGuI4GU08lTAbHpmtjLmCcBZRS4pZk9CdEN3oRRlK0s-I91J0ypBbdN68qqh6buGvvsp7a8GVTxOWVjxQmSpu6weCCyKVksAATRhn8IKKJ3jlg25ZKsAr9Cyox9Oc0yg3T3sX74XZY51KeJhyM8jG_Mwj-j3fhfH8H_sXBXVp0h4VgVVwgWt5Iy1I9dlG_n6Rqfu7M"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Canvas / Page Content -->
+<div class="flex-1 p-lg md:p-xxl max-w-container-max mx-auto w-full space-y-xl">
+<!-- Hero / Welcome -->
+<section class="space-y-xs">
+<h1 class="font-headline-lg text-headline-lg dark:text-primary-fixed">Good Morning, Abhishek!</h1>
+<p class="font-body-md text-on-surface-variant max-w-2xl">You have 2 classes scheduled for today. Ready to master Calculus and Digital Logic?</p>
+</section>
+<!-- Stats Grid (Bento Style) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-lg">
+<div class="glass-card p-lg rounded-xl shadow-sm hover:shadow-md transition-all group overflow-hidden relative">
+<div class="flex flex-col gap-sm relative z-10">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">schedule</span>
+<p class="font-label-md text-on-surface-variant">Upcoming Lessons</p>
+<h3 class="font-headline-md text-headline-md">12</h3>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl">book</span>
+</div>
+</div>
+<div class="glass-card p-lg rounded-xl shadow-sm hover:shadow-md transition-all group overflow-hidden relative">
+<div class="flex flex-col gap-sm relative z-10">
+<span class="material-symbols-outlined text-secondary text-3xl group-hover:scale-110 transition-transform">timer</span>
+<p class="font-label-md text-on-surface-variant">Total Hours</p>
+<h3 class="font-headline-md text-headline-md">48.5</h3>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl">history</span>
+</div>
+</div>
+<div class="glass-card p-lg rounded-xl shadow-sm hover:shadow-md transition-all group overflow-hidden relative">
+<div class="flex flex-col gap-sm relative z-10">
+<span class="material-symbols-outlined text-tertiary text-3xl group-hover:scale-110 transition-transform">school</span>
+<p class="font-label-md text-on-surface-variant">Active Tutors</p>
+<h3 class="font-headline-md text-headline-md">4</h3>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl">groups</span>
+</div>
+</div>
+<div class="glass-card p-lg rounded-xl shadow-sm hover:shadow-md transition-all group overflow-hidden relative">
+<div class="flex flex-col gap-sm relative z-10">
+<span class="material-symbols-outlined text-primary-container text-3xl group-hover:scale-110 transition-transform">workspace_premium</span>
+<p class="font-label-md text-on-surface-variant">Course Progress</p>
+<h3 class="font-headline-md text-headline-md">84%</h3>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-8xl">trending_up</span>
+</div>
+</div>
+</section>
+<!-- Main Layout: Classes & Feed -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-xl">
+<!-- Left: Upcoming Classes (Asymmetric Layout) -->
+<div class="lg:col-span-2 space-y-lg">
+<div class="flex justify-between items-end">
+<h2 class="font-headline-md text-headline-md">Upcoming Lessons</h2>
+<button class="text-primary font-label-md hover:underline">View Schedule</button>
+</div>
+<div class="space-y-md">
+<!-- Class Card 1 -->
+<div class="flex flex-col md:flex-row glass-card rounded-xl overflow-hidden group hover:border-primary/40 transition-all">
+<div class="md:w-48 h-32 md:h-auto relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-4xl">functions</span>
+</div>
+<div class="absolute top-2 left-2 px-2 py-1 bg-white/90 dark:bg-black/60 rounded font-label-sm text-xs">ONLINE</div>
+</div>
+<div class="p-lg flex-1 flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div class="space-y-xs">
+<p class="font-label-sm text-primary uppercase">Calculus III</p>
+<h4 class="font-headline-sm text-headline-sm">Vector Spaces & Integrals</h4>
+<div class="flex items-center gap-md text-on-surface-variant">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<span class="text-label-md">Today</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span class="text-label-md">4:00 PM - 5:30 PM</span>
+</div>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-xl font-label-md hover:shadow-lg active:scale-95 transition-all flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-md">videocam</span>
+                                    Join Lesson
+                                </button>
+</div>
+</div>
+<!-- Class Card 2 -->
+<div class="flex flex-col md:flex-row glass-card rounded-xl overflow-hidden group hover:border-secondary/40 transition-all">
+<div class="md:w-48 h-32 md:h-auto relative overflow-hidden">
+<div class="absolute inset-0 bg-secondary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-4xl">memory</span>
+</div>
+<div class="absolute top-2 left-2 px-2 py-1 bg-white/90 dark:bg-black/60 rounded font-label-sm text-xs">PHYSICAL</div>
+</div>
+<div class="p-lg flex-1 flex flex-col md:flex-row md:items-center justify-between gap-md">
+<div class="space-y-xs">
+<p class="font-label-sm text-secondary uppercase">Digital Logic</p>
+<h4 class="font-headline-sm text-headline-sm">Flip-Flops & Sequential Circuits</h4>
+<div class="flex items-center gap-md text-on-surface-variant">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<span class="text-label-md">Tomorrow</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span class="text-label-md">Pulchowk Engineering Lab</span>
+</div>
+</div>
+</div>
+<button class="border-2 border-secondary text-secondary px-lg py-sm rounded-xl font-label-md hover:bg-secondary/10 transition-all flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-md">map</span>
+                                    View Map
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Activity Feed & Recommended -->
+<div class="space-y-xl">
+<section class="space-y-lg">
+<h2 class="font-headline-sm text-headline-sm">Recent Activity</h2>
+<div class="glass-card rounded-xl p-md space-y-md divide-y divide-outline-variant/20 max-h-[400px] overflow-y-auto custom-scrollbar">
+<div class="flex gap-md py-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">chat_bubble</span>
+</div>
+<div class="space-y-1">
+<p class="font-label-md text-on-surface">New message from <strong>Dr. Arpan</strong></p>
+<p class="font-label-sm text-on-surface-variant">"I've shared the notes for today's session..."</p>
+<p class="text-[10px] text-outline-variant">15 mins ago</p>
+</div>
+</div>
+<div class="flex gap-md py-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+</div>
+<div class="space-y-1">
+<p class="font-label-md text-on-surface">Booking Confirmed</p>
+<p class="font-label-sm text-on-surface-variant">Physics session with Sarah Rai</p>
+<p class="text-[10px] text-outline-variant">2 hours ago</p>
+</div>
+</div>
+<div class="flex gap-md py-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary">error</span>
+</div>
+<div class="space-y-1">
+<p class="font-label-md text-on-surface">Payment Reminder</p>
+<p class="font-label-sm text-on-surface-variant">Invoice #TC-2024-89 is pending</p>
+<p class="text-[10px] text-outline-variant">Yesterday</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Recommended Tutors (Grid View) -->
+<section class="space-y-lg pt-xl">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-headline-md text-headline-md">Recommended for You</h2>
+<p class="font-body-md text-on-surface-variant">Top-rated tutors based on your learning interests.</p>
+</div>
+<button class="text-primary font-label-md hover:underline flex items-center gap-xs">
+                        Browse All Tutors <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Tutor Card 1 -->
+<div class="bg-surface-container-lowest dark:bg-inverse-surface/40 p-md rounded-xl border border-outline-variant/30 hover:border-primary hover:-translate-y-1 transition-all duration-300">
+<div class="flex gap-lg items-start">
+<img class="w-20 h-24 rounded-lg object-cover" data-alt="A portrait of a smiling female computer science professor in her late 30s. She is wearing modern glasses and professional academic attire. The background features a clean, high-tech computer lab with soft blue lighting and blurred monitors showing code. High-quality editorial style, soft cinematic lighting, teal and white color scheme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAghIVWS79mT9w3sunBT9U1ZzzRYVCol8ar2zQjr-hQyUzwc0tj3HHDjKPEwaHaNofg4Uh9CrUYt5t4tLtYsLbVvhIJFzYbHPMrCZRVJTweIg7JkaxuRd3yCV52snPP2L9Z30xZ3xwvV9VUDo_o9P1-Jisc1wGhQnBX-ciGrUOI1Bpa2LYIEB-4Frxa5FwCLs-VkUf1t4tee9wU8U-SBMk2sEBkSkk8V1Q3rHLXzETEyomLqzlgC7gG2psM1pwg8CZAS7SFesciU0"/>
+<div class="flex-1 space-y-1">
+<div class="flex justify-between">
+<h4 class="font-headline-sm text-headline-sm">Sunita Maharjan</h4>
+<div class="flex items-center gap-xs text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md">4.9</span>
+</div>
+</div>
+<p class="text-label-md text-primary font-semibold">Python & Data Science</p>
+<p class="font-label-sm text-on-surface-variant">MSc. CS, 8+ years exp.</p>
+<div class="flex items-center justify-between pt-sm">
+<span class="font-label-md text-on-surface">Rs. 1,200/hr</span>
+<button class="bg-primary/10 text-primary px-3 py-1 rounded-lg font-label-sm hover:bg-primary hover:text-white transition-colors">Book Now</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Tutor Card 2 -->
+<div class="bg-surface-container-lowest dark:bg-inverse-surface/40 p-md rounded-xl border border-outline-variant/30 hover:border-primary hover:-translate-y-1 transition-all duration-300">
+<div class="flex gap-lg items-start">
+<img class="w-20 h-24 rounded-lg object-cover" data-alt="A portrait of a male university lecturer with a thoughtful expression. He has short hair and a neat beard, wearing a formal light grey sweater. Behind him is a wall of academic books in a warm, wood-toned office. The lighting is soft and professional, emphasizing a knowledgeable and approachable character. Modern educational aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ43ZF4QhZcHqHU_rcV8rOGpdrZpEr3g35IGB1I0rVzPlzJi2IQowGp_EpIcJJ0kTxXCAD2LNbsD30I-a2vcW8Ph5PZ2yT-jJFH86zeFfG_HXs_qFa9iO6FrP-BMRpqmpnI8aYvK5KhamLJSCjWiBwLqoa0N-E4nx-IdXhXrILc14dAk98Sz8D5hoisWRW0BHAkt8wafTqpyvz7DFseyfQuMo759uFo8Og76dYv5w6mOMCipqsjnM4uE0p4fAf3CizNjVwFKHI_ec"/>
+<div class="flex-1 space-y-1">
+<div class="flex justify-between">
+<h4 class="font-headline-sm text-headline-sm">Dr. Binod Kafle</h4>
+<div class="flex items-center gap-xs text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md">5.0</span>
+</div>
+</div>
+<p class="text-label-md text-primary font-semibold">Physics (Thermodynamics)</p>
+<p class="font-label-sm text-on-surface-variant">PhD, TU Professor</p>
+<div class="flex items-center justify-between pt-sm">
+<span class="font-label-md text-on-surface">Rs. 2,000/hr</span>
+<button class="bg-primary/10 text-primary px-3 py-1 rounded-lg font-label-sm hover:bg-primary hover:text-white transition-colors">Book Now</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Tutor Card 3 -->
+<div class="bg-surface-container-lowest dark:bg-inverse-surface/40 p-md rounded-xl border border-outline-variant/30 hover:border-primary hover:-translate-y-1 transition-all duration-300">
+<div class="flex gap-lg items-start">
+<img class="w-20 h-24 rounded-lg object-cover" data-alt="A vibrant portrait of a young female educator with a friendly and energetic aura. She is wearing a colorful scarf and holding a tablet. The background is a bright, airy creative studio with artistic elements and natural sunlight streaming in. Professional photography, vibrant colors, clean and high-end marketing aesthetic for an education platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkFYrOz_kXq4AHIBP9fuoWYWFTGNYo_yAHVlR8NPsF4uQUE9Cqu6zOOwUmLeAHeq9tW_WhQ9n_lIeVaO2VBL87e58R98679rZ0RITMe-5T5H3QAcpvVXpu7Igh_3At7xTT9cTZgPLutXrL8n7VOpszmWFK4PQIG6mfGa9AZ4_i-zbUP9HNS0MQ5f0kx5bNiGgYwMS5LZsGf8XPbj_7Y0dpS7lHcdpCVtJIKKgeIfi1Qj0kGAo9YP3zrAb_HYwroHwDXawJfQVsJDY"/>
+<div class="flex-1 space-y-1">
+<div class="flex justify-between">
+<h4 class="font-headline-sm text-headline-sm">Priya Sharma</h4>
+<div class="flex items-center gap-xs text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md">4.8</span>
+</div>
+</div>
+<p class="text-label-md text-primary font-semibold">Graphic Design & UI/UX</p>
+<p class="font-label-sm text-on-surface-variant">Senior Designer at TechHub</p>
+<div class="flex items-center justify-between pt-sm">
+<span class="font-label-md text-on-surface">Rs. 1,500/hr</span>
+<button class="bg-primary/10 text-primary px-3 py-1 rounded-lg font-label-sm hover:bg-primary hover:text-white transition-colors">Book Now</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer (Authority: JSON Mapping) -->
+<footer class="bg-surface-container-highest dark:bg-on-surface-variant border-t border-outline-variant dark:border-on-surface-variant/30 mt-xxl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-xl px-lg md:px-xxl py-xxl max-w-container-max mx-auto">
+<div class="space-y-md">
+<span class="font-headline-md text-headline-md font-bold text-primary">TutorConnect</span>
+<p class="font-body-md text-on-surface-variant">Connecting Nepal's brightest minds through quality personalized education.</p>
+</div>
+<div class="space-y-md">
+<h5 class="font-label-md font-bold text-on-surface">Company</h5>
+<ul class="space-y-sm">
+<li><a class="font-body-md text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary dark:hover:text-primary-fixed underline transition-opacity" href="#">About Us</a></li>
+<li><a class="font-body-md text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary dark:hover:text-primary-fixed underline transition-opacity" href="#">Safety Guide</a></li>
+</ul>
+</div>
+<div class="space-y-md">
+<h5 class="font-label-md font-bold text-on-surface">Support</h5>
+<ul class="space-y-sm">
+<li><a class="font-body-md text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary dark:hover:text-primary-fixed underline transition-opacity" href="#">Contact Support</a></li>
+<li><a class="font-body-md text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary dark:hover:text-primary-fixed underline transition-opacity" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="space-y-md">
+<h5 class="font-label-md font-bold text-on-surface">Legal</h5>
+<ul class="space-y-sm">
+<li><a class="font-body-md text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary dark:hover:text-primary-fixed underline transition-opacity" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="px-lg md:px-xxl py-md border-t border-outline-variant/10 max-w-container-max mx-auto text-center">
+<p class="font-body-md text-on-surface-variant dark:text-inverse-on-surface/70">© 2024 TutorConnect Nepal. All rights reserved.</p>
+</div>
+</footer>
+</main>
+<!-- Mobile Navigation Bar (Derived logic: Responsive Pivot) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface dark:bg-inverse-surface border-t border-outline-variant/20 px-md py-sm flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-xs text-primary" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center gap-xs text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-label-sm">Schedule</span>
+</a>
+<div class="relative -top-6">
+<button class="bg-primary text-on-primary w-14 h-14 rounded-full shadow-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">search</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-xs text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-[10px] font-label-sm">Chat</span>
+</a>
+<a class="flex flex-col items-center gap-xs text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interactions and interactions
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('click', function(e) {
+                const circle = document.createElement('span');
+                const diameter = Math.max(this.clientWidth, this.clientHeight);
+                const radius = diameter / 2;
+
+                circle.style.width = circle.style.height = `${diameter}px`;
+                circle.style.left = `${e.clientX - (this.offsetLeft + radius)}px`;
+                circle.style.top = `${e.clientY - (this.offsetTop + radius)}px`;
+                circle.classList.add('ripple');
+
+                const ripple = this.getElementsByClassName('ripple')[0];
+                if (ripple) { ripple.remove(); }
+                this.appendChild(circle);
+            });
+        });
+
+        // Simple Dashboard greeting update
+        const updateGreeting = () => {
+            const hour = new Date().getHours();
+            const h1 = document.querySelector('h1');
+            if(h1) {
+                if (hour < 12) h1.innerText = 'Good Morning, Abhishek!';
+                else if (hour < 18) h1.innerText = 'Good Afternoon, Abhishek!';
+                else h1.innerText = 'Good Evening, Abhishek!';
+            }
+        }
+        updateGreeting();
+    </script>
+</body></html>

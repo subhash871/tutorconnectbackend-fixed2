@@ -1,0 +1,571 @@
+import React from 'react';
+
+const TutorConnectHome = () => {
+    return (
+        <html className="scroll-smooth" lang="en">
+            <head>
+                <meta charSet="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>TutorConnect Nepal | Premium Academic Mentorship</title>
+                <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+                {/* Tailwind Configuration */}
+                <script id="tailwind-config">
+                    {`
+                        tailwind.config = {
+                            darkMode: "class",
+                            theme: {
+                                extend: {
+                                    colors: {
+                                        "on-surface-variant": "#3d4947",
+                                        "on-tertiary": "#ffffff",
+                                        "tertiary": "#924628",
+                                        "inverse-surface": "#213145",
+                                        "primary-fixed-dim": "#6bd8cb",
+                                        "background": "#f8f9ff",
+                                        "on-secondary-fixed-variant": "#2f2ebe",
+                                        "on-primary-fixed-variant": "#005049",
+                                        "on-tertiary-container": "#fffbff",
+                                        "secondary-fixed-dim": "#c0c1ff",
+                                        "on-primary-fixed": "#00201d",
+                                        "surface-tint": "#006a61",
+                                        "on-primary-container": "#f4fffc",
+                                        "tertiary-container": "#b05e3d",
+                                        "surface": "#f8f9ff",
+                                        "surface-container-high": "#dce9ff",
+                                        "outline-variant": "#bcc9c6",
+                                        "surface-container": "#e5eeff",
+                                        "primary-container": "#008378",
+                                        "tertiary-fixed-dim": "#ffb59a",
+                                        "primary-fixed": "#89f5e7",
+                                        "surface-bright": "#f8f9ff",
+                                        "on-secondary-container": "#fffbff",
+                                        "on-surface": "#0b1c30",
+                                        "error-container": "#ffdad6",
+                                        "error": "#ba1a1a",
+                                        "tertiary-fixed": "#ffdbce",
+                                        "inverse-primary": "#6bd8cb",
+                                        "on-tertiary-fixed": "#370e00",
+                                        "on-secondary": "#ffffff",
+                                        "on-primary": "#ffffff",
+                                        "inverse-on-surface": "#eaf1ff",
+                                        "on-error": "#ffffff",
+                                        "secondary-fixed": "#e1e0ff",
+                                        "outline": "#6d7a77",
+                                        "on-secondary-fixed": "#07006c",
+                                        "secondary-container": "#6063ee",
+                                        "surface-container-highest": "#d3e4fe",
+                                        "surface-variant": "#d3e4fe",
+                                        "surface-container-lowest": "#ffffff",
+                                        "secondary": "#4648d4",
+                                        "surface-container-low": "#eff4ff",
+                                        "on-background": "#0b1c30",
+                                        "on-error-container": "#93000a",
+                                        "primary": "#00685f",
+                                        "surface-dim": "#cbdbf5",
+                                        "on-tertiary-fixed-variant": "#773215"
+                                    },
+                                    borderRadius: {
+                                        DEFAULT: "0.25rem",
+                                        lg: "0.5rem",
+                                        xl: "0.75rem",
+                                        full: "9999px"
+                                    },
+                                    spacing: {
+                                        "container-max": "1280px",
+                                        "gutter": "24px",
+                                        xs: "4px",
+                                        xl: "32px",
+                                        sm: "8px",
+                                        md: "16px",
+                                        xxl: "48px",
+                                        base: "8px",
+                                        lg: "24px"
+                                    },
+                                    fontFamily: {
+                                        "body-md": ["Inter"],
+                                        "headline-md": ["Inter"],
+                                        "display-lg-mobile": ["Inter"],
+                                        "label-sm": ["Inter"],
+                                        "headline-lg": ["Inter"],
+                                        "body-lg": ["Inter"],
+                                        "headline-lg-mobile": ["Inter"],
+                                        "display-lg": ["Inter"],
+                                        "headline-sm": ["Inter"],
+                                        "label-md": ["Inter"]
+                                    },
+                                    fontSize: {
+                                        "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+                                        "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+                                        "display-lg-mobile": ["36px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                                        "label-sm": ["12px", { lineHeight: "1.3", fontWeight: "600" }],
+                                        "headline-lg": ["32px", { lineHeight: "1.25", fontWeight: "600" }],
+                                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                                        "headline-lg-mobile": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+                                        "display-lg": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+                                        "headline-sm": ["20px", { lineHeight: "1.4", fontWeight: "600" }],
+                                        "label-md": ["14px", { lineHeight: "1.4", letterSpacing: "0.01em", fontWeight: "500" }]
+                                    }
+                                }
+                            }
+                        }
+                    `}
+                </script>
+                <style>{`
+                    .glass-effect {
+                        backdrop-filter: blur(12px);
+                        -webkit-backdrop-filter: blur(12px);
+                    }
+                    .soft-shadow {
+                        box-shadow: 0 4px 20px -2px rgba(0, 104, 95, 0.08);
+                    }
+                    .card-hover:hover {
+                        transform: translateY(-4px);
+                        box-shadow: 0 12px 32px -4px rgba(0, 104, 95, 0.12);
+                    }
+                    .scrollbar-hide::-webkit-scrollbar {
+                        display: none;
+                    }
+                `}</style>
+            </head>
+            <body className="bg-background text-on-background font-body-md selection:bg-primary-fixed-dim selection:text-on-primary-fixed">
+                {/* TopNavBar */}
+                <header className="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-outline-variant dark:border-on-surface-variant/20 shadow-sm">
+                    <nav className="flex justify-between items-center w-full px-lg md:px-xxl py-md max-w-container-max mx-auto">
+                        <div className="flex items-center gap-xl">
+                            <span className="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">TutorConnect Nepal</span>
+                            <div className="hidden lg:flex items-center gap-lg font-body-md text-body-md">
+                                <a className="text-on-surface-variant dark:text-outline hover:text-primary transition-colors" href="#">Find Tutors</a>
+                                <a className="text-on-surface-variant dark:text-outline hover:text-primary transition-colors" href="#">How it Works</a>
+                                <a className="text-on-surface-variant dark:text-outline hover:text-primary transition-colors" href="#">Categories</a>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-md">
+                            <button className="hidden md:block px-md py-sm font-label-md text-label-md text-primary hover:bg-surface-container-low transition-all rounded-xl">Log In</button>
+                            <button className="px-lg py-sm bg-primary text-on-primary font-label-md text-label-md rounded-xl hover:shadow-lg active:scale-95 transition-all">Join as Tutor</button>
+                        </div>
+                    </nav>
+                </header>
+                <main>
+                    {/* Hero Section */}
+                    <section className="relative pt-xxl pb-xxl overflow-hidden">
+                        <div className="max-w-container-max mx-auto px-lg md:px-xxl grid grid-cols-1 lg:grid-cols-2 gap-xxl items-center">
+                            <div className="z-10">
+                                <h1 className="font-display-lg text-display-lg mb-md leading-tight text-on-surface">
+                                    Find the Perfect <span className="text-primary">Tutor</span> in Nepal
+                                </h1>
+                                <p className="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-lg">
+                                    Connect with verified expert educators for personalized online and home tuition. Elevate your learning journey with Nepal's most trusted platform.
+                                </p>
+                                {/* Search Bar Bento-style */}
+                                <div className="bg-surface-container-lowest p-sm rounded-xxl shadow-xl border border-outline-variant/30 flex flex-col md:flex-row gap-sm">
+                                    <div className="flex-1 flex items-center px-md py-sm gap-md border-b md:border-b-0 md:border-r border-outline-variant/20">
+                                        <span className="material-symbols-outlined text-primary" data-icon="search">search</span>
+                                        <input className="w-full bg-transparent border-none focus:ring-0 text-body-md outline-none" placeholder="Subject (e.g. Maths, IELTS)" type="text" />
+                                    </div>
+                                    <div className="flex-1 flex items-center px-md py-sm gap-md">
+                                        <span className="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+                                        <input className="w-full bg-transparent border-none focus:ring-0 text-body-md outline-none" placeholder="Location (e.g. Kathmandu)" type="text" />
+                                    </div>
+                                    <button className="bg-primary text-on-primary px-xxl py-md rounded-xl font-headline-sm text-headline-sm hover:bg-primary-container transition-all active:scale-95 shadow-md">
+                                        Search
+                                    </button>
+                                </div>
+                                {/* Stats */}
+                                <div className="mt-xl flex flex-wrap gap-xl">
+                                    <div className="flex flex-col">
+                                        <span className="font-headline-md text-headline-md text-primary">5000+</span>
+                                        <span className="font-label-md text-label-md text-on-surface-variant">Verified Tutors</span>
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <span className="font-headline-md text-headline-md text-primary">10k+</span>
+                                        <span className="font-label-md text-label-md text-on-surface-variant">Students</span>
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <span className="font-headline-md text-headline-md text-primary">98%</span>
+                                        <span className="font-label-md text-label-md text-on-surface-variant">Satisfaction</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="relative">
+                                <div className="absolute -top-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+                                <div className="absolute -bottom-12 -right-12 w-64 h-64 bg-secondary/5 rounded-full blur-3xl"></div>
+                                <div className="relative rounded-xxl overflow-hidden aspect-square soft-shadow border-4 border-surface-container-highest">
+                                    <img 
+                                        className="w-full h-full object-cover" 
+                                        data-alt="A professional and friendly Nepalese tutor teaching a high school student in a modern, bright library setting. Soft natural lighting, focused expressions, contemporary academic atmosphere with books and a laptop. Warm teal and white color palette following the TutorConnect brand identity."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3auV421TQt2uR7J9n7mBrLYCgaEmbORajQGGl-GvTEjTTW07KuF2_daqSe0uiZIkvZbQJW4ES6SdWRYBAhxvWPNrsi4gJK4L8pZOdqqjW0apbQMAXJNTHaqjW2wtdiPTd-4rLDXg2Sqemw6LMtNPXt784OPqK-y76UenfdUn_tQuo9mh2O6-qb4FlTuAqxKHSU-DEE5BHaqoaon9Odoc93QD4k6CalW8jsYBZygQBzEsP3F0rOV5ylIEIzVtXifkd3JpZF4ErOH0"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    {/* Categories Grid */}
+                    <section className="py-xxl bg-surface-container-low">
+                        <div className="max-w-container-max mx-auto px-lg md:px-xxl">
+                            <div className="text-center mb-xxl">
+                                <h2 className="font-headline-lg text-headline-lg mb-sm text-on-surface">Explore by Category</h2>
+                                <p className="font-body-md text-body-md text-on-surface-variant">Tailored learning solutions for every educational need</p>
+                            </div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-lg">
+                                {/* Category Card 1 */}
+                                <div className="bg-surface-container-lowest p-xl rounded-xxl border border-outline-variant/30 card-hover transition-all text-center">
+                                    <div className="w-16 h-16 bg-primary/10 text-primary rounded-xl flex items-center justify-center mx-auto mb-lg">
+                                        <span className="material-symbols-outlined text-[32px]" data-icon="home">home</span>
+                                    </div>
+                                    <h3 className="font-headline-sm text-headline-sm mb-sm">Home Tuition</h3>
+                                    <p className="font-label-md text-label-md text-on-surface-variant">Personalized 1-on-1 sessions at your doorstep across Nepal.</p>
+                                </div>
+                                {/* Category Card 2 */}
+                                <div className="bg-surface-container-lowest p-xl rounded-xxl border border-outline-variant/30 card-hover transition-all text-center">
+                                    <div className="w-16 h-16 bg-secondary/10 text-secondary rounded-xl flex items-center justify-center mx-auto mb-lg">
+                                        <span className="material-symbols-outlined text-[32px]" data-icon="video_call">video_call</span>
+                                    </div>
+                                    <h3 className="font-headline-sm text-headline-sm mb-sm">Online Classes</h3>
+                                    <p className="font-label-md text-label-md text-on-surface-variant">Interactive virtual classrooms with state-of-the-art tools.</p>
+                                </div>
+                                {/* Category Card 3 */}
+                                <div className="bg-surface-container-lowest p-xl rounded-xxl border border-outline-variant/30 card-hover transition-all text-center">
+                                    <div className="w-16 h-16 bg-tertiary-container/10 text-tertiary rounded-xl flex items-center justify-center mx-auto mb-lg">
+                                        <span className="material-symbols-outlined text-[32px]" data-icon="school">school</span>
+                                    </div>
+                                    <h3 className="font-headline-sm text-headline-sm mb-sm">Exam Prep</h3>
+                                    <p className="font-label-md text-label-md text-on-surface-variant">SEE, NEB, IELTS, and Entrance preparation with toppers.</p>
+                                </div>
+                                {/* Category Card 4 */}
+                                <div className="bg-surface-container-lowest p-xl rounded-xxl border border-outline-variant/30 card-hover transition-all text-center">
+                                    <div className="w-16 h-16 bg-primary-fixed-dim/10 text-primary-container rounded-xl flex items-center justify-center mx-auto mb-lg">
+                                        <span className="material-symbols-outlined text-[32px]" data-icon="psychology">psychology</span>
+                                    </div>
+                                    <h3 className="font-headline-sm text-headline-sm mb-sm">Skill Development</h3>
+                                    <p className="font-label-md text-label-md text-on-surface-variant">Coding, Music, Art, and Languages for all age groups.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    {/* Featured Teachers */}
+                    <section className="py-xxl">
+                        <div className="max-w-container-max mx-auto px-lg md:px-xxl">
+                            <div className="flex justify-between items-end mb-xxl">
+                                <div>
+                                    <h2 className="font-headline-lg text-headline-lg text-on-surface">Top Rated Tutors</h2>
+                                    <p className="font-body-md text-body-md text-on-surface-variant">Learn from the best educators in the country</p>
+                                </div>
+                                <a className="text-primary font-label-md text-label-md flex items-center gap-xs hover:underline" href="#">
+                                    View All Tutors <span className="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+                                </a>
+                            </div>
+                            <div className="flex gap-lg overflow-x-auto pb-lg scrollbar-hide">
+                                {/* Teacher Card 1 */}
+                                <div className="min-w-[300px] bg-surface-container-lowest rounded-xxl border border-outline-variant/20 soft-shadow card-hover transition-all flex flex-col">
+                                    <div className="h-48 overflow-hidden rounded-t-xxl relative">
+                                        <img className="w-full h-full object-cover" data-alt="Portrait of a young, professional female mathematics tutor with a friendly smile, wearing smart casual attire. The background is a blurred academic workspace with subtle Nepalese cultural elements like a small desk flag or traditional artwork. High-key lighting, professional photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR6oUnfRW5RLQSIS-M__-u9is3Qbw9__hAHJQqVZDaCs4h8GJJ9tAbtkF3XvGGlQA8AOvJX4GoKHoca0EScK478oxq0GxhC0fP5K6u6JfvIH0qMVkvyTZIeqSbBdcR3Tw0ljjh5zc_g1_slEXQ664qDIMFLakTZA_1e47HI1azIANeG44EUFbOyCXfp4H4Pmdiqmy1RhpKCV9WJa4YTzCc_rCSTCBvzED9LZqUrVDBqAjXxBuhz16AWLnAFEbyHWMEHiOUOz-tRZs" />
+                                        <div className="absolute top-md right-md bg-surface-container-lowest/90 backdrop-blur px-sm py-xs rounded-lg flex items-center gap-xs">
+                                            <span className="material-symbols-outlined text-tertiary text-body-md" data-icon="star" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                            <span className="font-label-md text-label-md font-bold">4.9</span>
+                                        </div>
+                                    </div>
+                                    <div className="p-lg">
+                                        <h4 className="font-headline-sm text-headline-sm text-on-surface">Prativa Adhikari</h4>
+                                        <p className="font-label-md text-label-md text-primary mb-md">Adv. Mathematics & Physics</p>
+                                        <div className="flex justify-between items-center border-t border-outline-variant/10 pt-md">
+                                            <div className="flex flex-col">
+                                                <span className="text-xs text-on-surface-variant uppercase font-bold tracking-wider">Starts from</span>
+                                                <span className="font-headline-sm text-headline-sm text-on-surface">Rs. 800<span className="text-xs text-on-surface-variant">/hr</span></span>
+                                            </div>
+                                            <button className="p-sm bg-primary/10 text-primary rounded-xl hover:bg-primary hover:text-on-primary transition-all">
+                                                <span className="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* Teacher Card 2 */}
+                                <div className="min-w-[300px] bg-surface-container-lowest rounded-xxl border border-outline-variant/20 soft-shadow card-hover transition-all flex flex-col">
+                                    <div className="h-48 overflow-hidden rounded-t-xxl relative">
+                                        <img className="w-full h-full object-cover" data-alt="A middle-aged male English language tutor with glasses, looking knowledgeable and encouraging. He is sitting in a minimalist study with bookshelves in the background. Warm, academic lighting, professional headshot. Soft teal accents to match the UI design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIH_oEtiR3ZB6aH3-qedtSs3NZkX1--Cu6Z0wpcGjQyzTNTmIokwSgi8QHPhVOgPrtj7qFiTczpaQxKURfEDvKpvzN-R_qf-0180uUYDNsQ3VmHbp4e_ZBjX8i4X_cxnCSSy5fsxxvN4Ig42WaW_t_rLD05irzHvJGPXeJoJ2Y-np6s1u_VkPuR9EPEawVY70tzOKrZDK0UnvAKIOyh1zPAwXViWT2UXEa6SiN2gYDropW1xaciHNo2_MmBboiJ-fbAIrr3lKZpv4" />
+                                        <div className="absolute top-md right-md bg-surface-container-lowest/90 backdrop-blur px-sm py-xs rounded-lg flex items-center gap-xs">
+                                            <span className="material-symbols-outlined text-tertiary text-body-md" data-icon="star" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                            <span className="font-label-md text-label-md font-bold">4.8</span>
+                                        </div>
+                                    </div>
+                                    <div className="p-lg">
+                                        <h4 className="font-headline-sm text-headline-sm text-on-surface">Dr. Arpan Sharma</h4>
+                                        <p className="font-label-md text-label-md text-primary mb-md">IELTS & English Literature</p>
+                                        <div className="flex justify-between items-center border-t border-outline-variant/10 pt-md">
+                                            <div className="flex flex-col">
+                                                <span className="text-xs text-on-surface-variant uppercase font-bold tracking-wider">Starts from</span>
+                                                <span className="font-headline-sm text-headline-sm text-on-surface">Rs. 1200<span className="text-xs text-on-surface-variant">/hr</span></span>
+                                            </div>
+                                            <button className="p-sm bg-primary/10 text-primary rounded-xl hover:bg-primary hover:text-on-primary transition-all">
+                                                <span className="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* Teacher Card 3 */}
+                                <div className="min-w-[300px] bg-surface-container-lowest rounded-xxl border border-outline-variant/20 soft-shadow card-hover transition-all flex flex-col">
+                                    <div className="h-48 overflow-hidden rounded-t-xxl relative">
+                                        <img className="w-full h-full object-cover" data-alt="A young male Computer Science tutor in a bright, tech-oriented home office. He has a modern, approachable look, wearing a simple polo shirt. Laptops and coding books are visible in the soft-focus background. Clean, bright, and professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4CaekCR9yyJP-GhfnTt0t6wttdD-zW5bwGeQyt141SJFSdlyzjFyIeBTvUJoYOeOUgsDdsVHjuCKdWu1UMhReS1A9URgrvmUEVMTffvrmePq-j26qXrvMp7nX7DeqT50PYCM9HPaRrq0ig4XFhbtkrPtAZJ14ArsT5vv4nkizQWlUkH1bPGU3tQ1KRP8GLOVSjLry3caUaEXljWF4MtP-8-ydHpNJCcI02huJgYrWRyHEsBjmU1Qe5CdBfA9BkwBmcjm4J5ZwRLs" />
+                                        <div className="absolute top-md right-md bg-surface-container-lowest/90 backdrop-blur px-sm py-xs rounded-lg flex items-center gap-xs">
+                                            <span className="material-symbols-outlined text-tertiary text-body-md" data-icon="star" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                            <span className="font-label-md text-label-md font-bold">5.0</span>
+                                        </div>
+                                    </div>
+                                    <div className="p-lg">
+                                        <h4 className="font-headline-sm text-headline-sm text-on-surface">Sujan K.C.</h4>
+                                        <p className="font-label-md text-label-md text-primary mb-md">Web Development & Java</p>
+                                        <div className="flex justify-between items-center border-t border-outline-variant/10 pt-md">
+                                            <div className="flex flex-col">
+                                                <span className="text-xs text-on-surface-variant uppercase font-bold tracking-wider">Starts from</span>
+                                                <span className="font-headline-sm text-headline-sm text-on-surface">Rs. 1000<span className="text-xs text-on-surface-variant">/hr</span></span>
+                                            </div>
+                                            <button className="p-sm bg-primary/10 text-primary rounded-xl hover:bg-primary hover:text-on-primary transition-all">
+                                                <span className="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* Teacher Card 4 */}
+                                <div className="min-w-[300px] bg-surface-container-lowest rounded-xxl border border-outline-variant/20 soft-shadow card-hover transition-all flex flex-col">
+                                    <div className="h-48 overflow-hidden rounded-t-xxl relative">
+                                        <img className="w-full h-full object-cover" data-alt="A female science teacher explaining a concept with a small molecular model. She looks enthusiastic and professional, set in a clean classroom environment with a whiteboard. Bright, even lighting, high clarity, academic professional style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAErwAM6CTwwiEcnFTgs5G4FUWv2KhTNyr9105D9dLX3QgsmsPFH2gK_9jQANKIS9MQs9YRmBIMO4ZoPaZJaXMsFeSMDA06_zWfy9RbGNp2_PkVJzuEQjZQ5mNgc1L2PT3yLGmLQ5uqQL92xfg1AHYb6nunPulPJ6_D2nLLA8b-YjatIuzL-SDvBSCwbclVIpmrugd96aXqAtfeRZJOLewGRtr8wlwykioIpj7SAFXO7MQ6hVSIKD1sSNKkSuoDlRt1x31_vE6pqGA" />
+                                        <div className="absolute top-md right-md bg-surface-container-lowest/90 backdrop-blur px-sm py-xs rounded-lg flex items-center gap-xs">
+                                            <span className="material-symbols-outlined text-tertiary text-body-md" data-icon="star" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                            <span className="font-label-md text-label-md font-bold">4.7</span>
+                                        </div>
+                                    </div>
+                                    <div className="p-lg">
+                                        <h4 className="font-headline-sm text-headline-sm text-on-surface">Ritu Thapa</h4>
+                                        <p className="font-label-md text-label-md text-primary mb-md">Biology & Chemistry</p>
+                                        <div className="flex justify-between items-center border-t border-outline-variant/10 pt-md">
+                                            <div className="flex flex-col">
+                                                <span className="text-xs text-on-surface-variant uppercase font-bold tracking-wider">Starts from</span>
+                                                <span className="font-headline-sm text-headline-sm text-on-surface">Rs. 900<span className="text-xs text-on-surface-variant">/hr</span></span>
+                                            </div>
+                                            <button className="p-sm bg-primary/10 text-primary rounded-xl hover:bg-primary hover:text-on-primary transition-all">
+                                                <span className="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    {/* How it Works */}
+                    <section className="py-xxl bg-surface">
+                        <div className="max-w-container-max mx-auto px-lg md:px-xxl">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-xxl items-center">
+                                <div className="order-2 lg:order-1 relative">
+                                    <div className="grid grid-cols-2 gap-md">
+                                        <div className="space-y-md pt-xxl">
+                                            <div className="bg-primary/5 p-lg rounded-xxl border border-primary/10">
+                                                <span className="text-primary font-black text-headline-lg opacity-20 block mb-sm">01</span>
+                                                <h4 className="font-headline-sm text-headline-sm text-primary mb-xs">Search</h4>
+                                                <p className="text-label-md text-on-surface-variant">Find tutors based on subject, grade, and location.</p>
+                                            </div>
+                                            <div className="bg-secondary/5 p-lg rounded-xxl border border-secondary/10">
+                                                <span className="text-secondary font-black text-headline-lg opacity-20 block mb-sm">03</span>
+                                                <h4 className="font-headline-sm text-headline-sm text-secondary mb-xs">Book</h4>
+                                                <p className="text-label-md text-on-surface-variant">Schedule a demo or regular classes easily.</p>
+                                            </div>
+                                        </div>
+                                        <div className="space-y-md">
+                                            <div className="bg-tertiary-container/5 p-lg rounded-xxl border border-tertiary-container/10">
+                                                <span className="text-tertiary font-black text-headline-lg opacity-20 block mb-sm">02</span>
+                                                <h4 className="font-headline-sm text-headline-sm text-tertiary mb-xs">Interview</h4>
+                                                <p className="text-label-md text-on-surface-variant">Talk to the tutors and check their credentials.</p>
+                                            </div>
+                                            <div className="bg-primary-fixed-dim/5 p-lg rounded-xxl border border-primary-fixed-dim/10">
+                                                <span className="text-primary-container font-black text-headline-lg opacity-20 block mb-sm">04</span>
+                                                <h4 className="font-headline-sm text-headline-sm text-primary-container mb-xs">Learn</h4>
+                                                <p className="text-label-md text-on-surface-variant">Start your learning journey with confidence.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="order-1 lg:order-2">
+                                    <span className="text-primary font-label-md text-label-md tracking-widest uppercase mb-sm block">Simplicity First</span>
+                                    <h2 className="font-headline-lg text-headline-lg mb-md text-on-surface leading-tight">Your Education, Simplified into 4 Steps</h2>
+                                    <p className="font-body-md text-body-md text-on-surface-variant mb-xl">
+                                        We've removed the friction from finding the right mentor. Our platform handles the verification and matching so you can focus solely on what matters—learning.
+                                    </p>
+                                    <ul className="space-y-md">
+                                        <li className="flex items-start gap-md">
+                                            <div className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center mt-xs flex-shrink-0">
+                                                <span className="material-symbols-outlined text-[14px]" data-icon="check">check</span>
+                                            </div>
+                                            <span className="font-body-md text-body-md">Background-checked and academic verified tutors.</span>
+                                        </li>
+                                        <li className="flex items-start gap-md">
+                                            <div className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center mt-xs flex-shrink-0">
+                                                <span className="material-symbols-outlined text-[14px]" data-icon="check">check</span>
+                                            </div>
+                                            <span className="font-body-md text-body-md">Flexible scheduling and payment options.</span>
+                                        </li>
+                                        <li className="flex items-start gap-md">
+                                            <div className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center mt-xs flex-shrink-0">
+                                                <span className="material-symbols-outlined text-[14px]" data-icon="check">check</span>
+                                            </div>
+                                            <span className="font-body-md text-body-md">Replacement guarantee if not satisfied.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    {/* Testimonials */}
+                    <section className="py-xxl bg-surface-container-low overflow-hidden">
+                        <div className="max-w-container-max mx-auto px-lg md:px-xxl">
+                            <div className="text-center mb-xxl">
+                                <h2 className="font-headline-lg text-headline-lg mb-sm text-on-surface">Trusted by Families</h2>
+                                <p className="font-body-md text-body-md text-on-surface-variant">Real stories from our community of learners</p>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-lg">
+                                {/* Testimonial 1 */}
+                                <div className="bg-surface-container-lowest p-xl rounded-xxl border border-outline-variant/30 flex flex-col">
+                                    <div className="flex gap-xs mb-md">
+                                        <span className="material-symbols-outlined text-tertiary text-body-md" data-icon="star" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                        <span className="material-symbols-outlined text-tertiary text-body-md" data-icon="star" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                        <span className="material-symbols-outlined text-tertiary text-body-md" data-icon="star" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                        <span className="material-symbols-outlined text-tertiary text-body-md" data-icon="star" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                        <span className="material-symbols-outlined text-tertiary text-body-md" data-icon="star" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                    </div>
+                                    <p className="font-body-md text-body-md text-on-surface-variant mb-xl italic">
+                                        "Found a fantastic science tutor for my son's SEE prep within hours. The quality of teaching is exceptional."
+                                    </p>
+                                    <div className="flex items-center gap-md mt-auto">
+                                        <div className="w-12 h-12 rounded-full overflow-hidden bg-outline-variant">
+                                            <img className="w-full h-full object-cover" data-alt="Headshot of a middle-aged Nepalese father, smiling warmly. Professional studio portrait with soft lighting, matching the academic and trustworthy tone of the TutorConnect brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI-Wie2nzAXWY84E5MmalX--ohalrfEiJ4BAewhz_SvN6tCq5ict5-oC2WvCe_LelZW4qaIEiWH29sHq9S3deOH4opriOe2rzUGIb-D5rGEZX6pQ-1ucMXddowR97dgCYKEzW7blnDYuBzNXV3YlCvuNTOai2TmxGCTo7_NCiPEjoTpZkM_wGQJiTW4d8WuLLTpJ1WPVziQns6sFCjSOm31pxh1A4ixnPsOFai72yKZM4AP16-dnGZXugTkxMzlTO-wwWBHGgYS1w" />
+                                        </div>
+                                        <div>
+                                            <p className="font-label-md text-label-md font-bold">Rajesh Gurung</p>
+                                            <p className="text-xs text-on-surface-variant">Parent, Lalitpur</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* Testimonial 2 */}
+                                <div className="bg-surface-container-lowest p-xl rounded-xxl border border-outline-variant/30 flex flex-col">
+                                    <div className="flex gap-xs mb-md">
+                                        <span className="material-symbols-outlined text-tertiary text-body-md" data-icon="star" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                        <span className="material-symbols-outlined text-tertiary text-body-md" data-icon="star" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                        <span className="material-symbols-outlined text-tertiary text-body-md" data-icon="star" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                        <span className="material-symbols-outlined text-tertiary text-body-md" data-icon="star" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                        <span className="material-symbols-outlined text-tertiary text-body-md" data-icon="star" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                    </div>
+                                    <p className="font-body-md text-body-md text-on-surface-variant mb-xl italic">
+                                        "TutorConnect helped me find an IELTS instructor who truly understood my weaknesses. My score went from 6.0 to 7.5!"
+                                    </p>
+                                    <div className="flex items-center gap-md mt-auto">
+                                        <div className="w-12 h-12 rounded-full overflow-hidden bg-outline-variant">
+                                            <img className="w-full h-full object-cover" data-alt="Portrait of a young Nepalese student girl, confident and happy. She is holding a notebook, looking directly at the camera. Clean, modern background with a teal-tinted aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA34ZNSqM8NGkSE-AmuWEPsV1OBDq7faTvXnouoqNkCE1lmVf7bNUzViVssdHJ_TNtkdR_oHlPjUUVj1cdZ04PeuodC2OXu-lXI6qzh_XaIxXXHinrM5Ikz65IFlhEzqbo7biVR50F09e64ItNhcT7OKctm5sASd84E_fwQI8gPBJ3NdhxOw_qFjOu2iT3RQHWQhCtnmOcnQB1VoEfz02XeeYWdT0uItANrScN9Zat1ua6goHubOUwdnkK-5jVeOuf1k3GM9nv-gQ0" />
+                                        </div>
+                                        <div>
+                                            <p className="font-label-md text-label-md font-bold">Deepika Shrestha</p>
+                                            <p className="text-xs text-on-surface-variant">IELTS Student</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* Testimonial 3 */}
+                                <div className="bg-surface-container-lowest p-xl rounded-xxl border border-outline-variant/30 flex flex-col">
+                                    <div className="flex gap-xs mb-md">
+                                        <span className="material-symbols-outlined text-tertiary text-body-md" data-icon="star" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                        <span className="material-symbols-outlined text-tertiary text-body-md" data-icon="star" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                        <span className="material-symbols-outlined text-tertiary text-body-md" data-icon="star" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                        <span className="material-symbols-outlined text-tertiary text-body-md" data-icon="star" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                        <span className="material-symbols-outlined text-tertiary text-body-md" data-icon="star" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                    </div>
+                                    <p className="font-body-md text-body-md text-on-surface-variant mb-xl italic">
+                                        "The platform is so easy to use. I can track my daughter's progress and schedule classes all in one place."
+                                    </p>
+                                    <div className="flex items-center gap-md mt-auto">
+                                        <div className="w-12 h-12 rounded-full overflow-hidden bg-outline-variant">
+                                            <img className="w-full h-full object-cover" data-alt="Portrait of a professional Nepalese woman, motherly and caring. Soft indoor lighting, minimalist background. High-fidelity photography style for a premium look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACT9V2577Me0oe1kOQuh7Nh0fGKDHPnRHEZM9tIQ2-bdsGUOKLlYb4Wkr87R2TTwWn-0UyoNQoI85M8tpp2QnC19JFaaBT3wXKHLp0WLUGVRYDXxE6RSFJpgKhQD1Rf1lkKCeE44rxil2ksAQRWlr_UoG54kK2VqJYg7fC0P0OC403smh046s53ygGDZDSEn-UF2qb8D7pv2IL4RlzSsmmPm_fWWvf4G0O76XAw5UtdMl5Ws21pb5pQyf9RdAK0QuhcQKYS1gGao4" />
+                                        </div>
+                                        <div>
+                                            <p className="font-label-md text-label-md font-bold">Sabina Malla</p>
+                                            <p className="text-xs text-on-surface-variant">Parent, Pokhara</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    {/* CTA Section */}
+                    <section className="py-xxl px-lg md:px-xxl">
+                        <div className="max-w-container-max mx-auto bg-primary rounded-xxl overflow-hidden relative soft-shadow">
+                            <div className="absolute top-0 right-0 w-1/2 h-full bg-white/5 skew-x-[-20deg] translate-x-1/2"></div>
+                            <div className="p-xl md:p-xxl flex flex-col md:flex-row items-center justify-between relative z-10 gap-xl text-center md:text-left">
+                                <div className="max-w-xl">
+                                    <h2 className="font-display-lg text-display-lg text-on-primary mb-md">Become a Tutor Today</h2>
+                                    <p className="font-body-lg text-body-lg text-on-primary-container opacity-90">
+                                        Join Nepal's premier network of educators. Share your knowledge, set your own schedule, and earn while you empower others.
+                                    </p>
+                                </div>
+                                <div className="flex flex-col sm:flex-row gap-md">
+                                    <button className="px-xxl py-md bg-on-primary text-primary font-headline-sm text-headline-sm rounded-xl hover:shadow-2xl transition-all hover:-translate-y-1 active:scale-95">
+                                        Join as Tutor
+                                    </button>
+                                    <button className="px-xxl py-md border border-on-primary text-on-primary font-headline-sm text-headline-sm rounded-xl hover:bg-white/10 transition-all">
+                                        How it Works
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+                {/* Footer */}
+                <footer className="bg-surface-container-highest dark:bg-on-surface-variant border-t border-outline-variant dark:border-on-surface-variant/30">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-xl px-lg md:px-xxl py-xxl max-w-container-max mx-auto">
+                        <div className="col-span-1 md:col-span-1">
+                            <h2 className="font-headline-md text-headline-md font-bold text-primary mb-md">TutorConnect Nepal</h2>
+                            <p className="font-body-md text-body-md text-on-surface-variant dark:text-inverse-on-surface/70">
+                                Nepal's most trusted tutor marketplace connecting expert teachers with students nationwide.
+                            </p>
+                            <div className="flex gap-md mt-lg">
+                                <a className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+                                    <span className="material-symbols-outlined" data-icon="language">language</span>
+                                </a>
+                                <a className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+                                    <span className="material-symbols-outlined" data-icon="mail">mail</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 className="font-headline-sm text-headline-sm text-on-surface mb-lg">Platform</h4>
+                            <ul className="space-y-sm">
+                                <li><a className="font-body-md text-body-md text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary dark:hover:text-primary-fixed underline transition-all" href="#">About Us</a></li>
+                                <li><a className="font-body-md text-body-md text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary dark:hover:text-primary-fixed underline transition-all" href="#">Safety Guide</a></li>
+                                <li><a className="font-body-md text-body-md text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary dark:hover:text-primary-fixed underline transition-all" href="#">Categories</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="font-headline-sm text-headline-sm text-on-surface mb-lg">Support</h4>
+                            <ul className="space-y-sm">
+                                <li><a className="font-body-md text-body-md text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary dark:hover:text-primary-fixed underline transition-all" href="#">Contact Support</a></li>
+                                <li><a className="font-body-md text-body-md text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary dark:hover:text-primary-fixed underline transition-all" href="#">Privacy Policy</a></li>
+                                <li><a className="font-body-md text-body-md text-on-surface-variant dark:text-inverse-on-surface/70 hover:text-primary dark:hover:text-primary-fixed underline transition-all" href="#">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="font-headline-sm text-headline-sm text-on-surface mb-lg">Newsletter</h4>
+                            <p className="font-body-md text-body-md text-on-surface-variant dark:text-inverse-on-surface/70 mb-md">Get latest educational resources and tutor highlights.</p>
+                            <div className="flex gap-sm">
+                                <input className="w-full bg-surface-container rounded-xl border-none px-md focus:ring-2 focus:ring-primary text-body-md" placeholder="Email" type="email" />
+                                <button className="bg-primary text-on-primary p-md rounded-xl">
+                                    <span className="material-symbols-outlined" data-icon="send">send</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="max-w-container-max mx-auto px-lg md:px-xxl py-xl border-t border-outline-variant/30 text-center">
+                        <p className="font-body-md text-body-md text-on-surface-variant dark:text-inverse-on-surface/70">© 2024 TutorConnect Nepal. All rights reserved.</p>
+                    </div>
+                </footer>
+            </body>
+        </html>
+    );
+};
+
+export default TutorConnectHome;

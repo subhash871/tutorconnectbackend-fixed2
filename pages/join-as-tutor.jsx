@@ -1,0 +1,472 @@
+import React, { useState } from 'react';
+
+const JoinAsTutor = () => {
+    const [currentStep, setCurrentStep] = useState(1);
+
+    const nextStep = (step) => {
+        setCurrentStep(step);
+    };
+
+    return (
+        <html className="light" lang="en">
+            <head>
+                <meta charSet="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Join as Tutor | TutorConnect Nepal</title>
+                <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+                <style>{`
+                    .material-symbols-outlined {
+                        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+                        vertical-align: middle;
+                    }
+                    .step-transition {
+                        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    }
+                    .glass-panel {
+                        background: rgba(255, 255, 255, 0.7);
+                        backdrop-filter: blur(12px);
+                        -webkit-backdrop-filter: blur(12px);
+                    }
+                `}</style>
+                <script id="tailwind-config">
+                    {`
+                        tailwind.config = {
+                            darkMode: "class",
+                            theme: {
+                                extend: {
+                                    colors: {
+                                        "surface-bright": "#f8f9ff",
+                                        "on-tertiary-fixed": "#370e00",
+                                        "on-tertiary": "#ffffff",
+                                        "on-error-container": "#93000a",
+                                        "surface-variant": "#d3e4fe",
+                                        "primary-container": "#008378",
+                                        "on-primary-container": "#f4fffc",
+                                        "error": "#ba1a1a",
+                                        "surface-dim": "#cbdbf5",
+                                        "surface-container-high": "#dce9ff",
+                                        "on-error": "#ffffff",
+                                        "primary-fixed-dim": "#6bd8cb",
+                                        "error-container": "#ffdad6",
+                                        "tertiary-container": "#b05e3d",
+                                        "secondary": "#4648d4",
+                                        "on-tertiary-container": "#fffbff",
+                                        "on-surface-variant": "#3d4947",
+                                        "surface-container-low": "#eff4ff",
+                                        "on-secondary-fixed": "#07006c",
+                                        "outline": "#6d7a77",
+                                        "inverse-surface": "#213145",
+                                        "on-tertiary-fixed-variant": "#773215",
+                                        "surface-container-highest": "#d3e4fe",
+                                        "primary": "#00685f",
+                                        "on-surface": "#0b1c30",
+                                        "inverse-primary": "#6bd8cb",
+                                        "on-primary-fixed": "#00201d",
+                                        "tertiary-fixed-dim": "#ffb59a",
+                                        "on-primary": "#ffffff",
+                                        "tertiary-fixed": "#ffdbce",
+                                        "surface-tint": "#006a61",
+                                        "secondary-fixed": "#e1e0ff",
+                                        "primary-fixed": "#89f5e7",
+                                        "on-background": "#0b1c30",
+                                        "tertiary": "#924628",
+                                        "surface-container": "#e5eeff",
+                                        "secondary-fixed-dim": "#c0c1ff",
+                                        "on-secondary-fixed-variant": "#2f2ebe",
+                                        "secondary-container": "#6063ee",
+                                        "on-secondary": "#ffffff",
+                                        "surface": "#f8f9ff",
+                                        "inverse-on-surface": "#eaf1ff",
+                                        "background": "#f8f9ff",
+                                        "outline-variant": "#bcc9c6",
+                                        "on-primary-fixed-variant": "#005049",
+                                        "surface-container-lowest": "#ffffff",
+                                        "on-secondary-container": "#fffbff"
+                                    },
+                                    borderRadius: {
+                                        DEFAULT: "0.25rem",
+                                        lg: "0.5rem",
+                                        xl: "0.75rem",
+                                        full: "9999px"
+                                    },
+                                    spacing: {
+                                        base: "8px",
+                                        xl: "32px",
+                                        lg: "24px",
+                                        xxl: "48px",
+                                        "container-max": "1280px",
+                                        md: "16px",
+                                        "gutter": "24px",
+                                        sm: "8px",
+                                        xs: "4px"
+                                    },
+                                    fontFamily: {
+                                        "label-md": ["Inter"],
+                                        "headline-md": ["Inter"],
+                                        "body-lg": ["Inter"],
+                                        "headline-lg": ["Inter"],
+                                        "label-sm": ["Inter"],
+                                        "headline-sm": ["Inter"],
+                                        "display-lg": ["Inter"],
+                                        "body-md": ["Inter"]
+                                    }
+                                }
+                            }
+                        }
+                    `}
+                </script>
+            </head>
+            <body className="bg-background font-body-md text-on-background min-h-screen flex flex-col">
+                {/* TopNavBar (Shared Component) */}
+                <header className="bg-surface/80 backdrop-blur-xl border-b border-outline-variant docked full-width top-0 sticky z-50 shadow-sm">
+                    <div className="flex justify-between items-center w-full px-lg md:px-xxl py-md max-w-container-max mx-auto">
+                        <div className="flex items-center gap-xl">
+                            <a className="font-headline-md text-headline-md font-bold text-primary" href="#">TutorConnect Nepal</a>
+                            <nav className="hidden md:flex items-center gap-lg">
+                                <a className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Find Tutors</a>
+                                <a className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">How it Works</a>
+                                <a className="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Categories</a>
+                            </nav>
+                        </div>
+                        <div className="flex items-center gap-md">
+                            <button className="hidden md:block font-body-md text-body-md text-primary font-bold px-md py-sm rounded-lg hover:bg-surface-container-low transition-all">Log In</button>
+                            <button className="bg-primary text-on-primary px-lg py-sm rounded-xl font-bold shadow-sm hover:scale-95 active:scale-90 transition-all">Join as Tutor</button>
+                        </div>
+                    </div>
+                </header>
+                <main className="flex-grow flex items-center justify-center py-xxl px-md relative overflow-hidden">
+                    {/* Background Animation */}
+                    <div className="absolute top-0 left-0 w-full h-full -z-10 opacity-30">
+                        <div className="absolute top-[-10%] left-[-5%] w-[400px] h-[400px] bg-primary-fixed rounded-full blur-[100px]"></div>
+                        <div className="absolute bottom-[-10%] right-[-5%] w-[400px] h-[400px] bg-secondary-fixed rounded-full blur-[100px]"></div>
+                    </div>
+                    <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-12 gap-xl">
+                        {/* Left Side: Progress & Info */}
+                        <div className="md:col-span-4 flex flex-col gap-lg">
+                            <div className="bg-surface-container-low p-lg rounded-xl border border-outline-variant shadow-sm">
+                                <h2 className="font-headline-sm text-headline-sm text-primary mb-md">Teacher Onboarding</h2>
+                                <p className="font-body-md text-body-md text-on-surface-variant mb-xl">Complete these steps to start reaching thousands of students across Nepal.</p>
+                                <div className="flex flex-col gap-base" id="progress-steps">
+                                    {/* Step 1 */}
+                                    <div className="flex items-center gap-md group cursor-pointer" data-step="1">
+                                        <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-label-md transition-all border-2 border-primary bg-primary text-on-primary" id="step-indicator-1">1</div>
+                                        <div className="flex flex-col">
+                                            <span className="font-label-md text-label-md text-primary font-bold">Personal Info</span>
+                                            <span className="text-xs text-on-surface-variant">Identity & Contact</span>
+                                        </div>
+                                    </div>
+                                    <div className="w-px h-6 bg-outline-variant ml-5"></div>
+                                    {/* Step 2 */}
+                                    <div className="flex items-center gap-md group opacity-50 transition-opacity" data-step="2">
+                                        <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-label-md transition-all border-2 border-outline text-outline" id="step-indicator-2">2</div>
+                                        <div className="flex flex-col">
+                                            <span className="font-label-md text-label-md">Education</span>
+                                            <span className="text-xs text-on-surface-variant">Academic Background</span>
+                                        </div>
+                                    </div>
+                                    <div className="w-px h-6 bg-outline-variant ml-5"></div>
+                                    {/* Step 3 */}
+                                    <div className="flex items-center gap-md group opacity-50 transition-opacity" data-step="3">
+                                        <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-label-md transition-all border-2 border-outline text-outline" id="step-indicator-3">3</div>
+                                        <div className="flex flex-col">
+                                            <span className="font-label-md text-label-md">Expertise</span>
+                                            <span className="text-xs text-on-surface-variant">Subjects & Experience</span>
+                                        </div>
+                                    </div>
+                                    <div className="w-px h-6 bg-outline-variant ml-5"></div>
+                                    {/* Step 4 */}
+                                    <div className="flex items-center gap-md group opacity-50 transition-opacity" data-step="4">
+                                        <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-label-md transition-all border-2 border-outline text-outline" id="step-indicator-4">4</div>
+                                        <div className="flex flex-col">
+                                            <span className="font-label-md text-label-md">Preferences</span>
+                                            <span className="text-xs text-on-surface-variant">Teaching Mode</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="hidden md:block relative h-48 rounded-xl overflow-hidden shadow-lg border border-outline-variant">
+                                <img className="w-full h-full object-cover" data-alt="A professional Nepalese teacher smiling warmly, holding a tablet and standing in a modern, brightly lit home office. Soft sunlight filters through large windows, highlighting a clean and academic environment with bookshelves in the background. The aesthetic is modern professional, utilizing the primary teal and light surface-bright colors of the brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB6XhG8MhWTQtTJZzEaXwcc9NLleyL5ls9kxpnhDczpb4JxqbtaxsPuZ8MzZRAqiNaAfpS-O1UvCsdehljMkw7jowiJVuBY3CoZq2FfF4PT-yXcQdvzWNs089TrG4zZay4Us1LhR63-kVA-p2HaQClwUbSlHnbida_6w7_SZ17xzPM1ic_V0e1a36newV2lOTFgdZQ6ylsS9agadSEcYp6DBXfCanNBqDPhGXRgLOWD1AZ33jb7LoWTf081e1NrOKdDer1595LGXI" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </div>
+                        </div>
+                        {/* Right Side: Forms */}
+                        <div className="md:col-span-8">
+                            <div className="glass-panel p-xl rounded-xl border border-outline-variant shadow-lg min-h-[600px] flex flex-col">
+                                {/* Form Step 1: Personal Info */}
+                                <section className="step-transition opacity-100 flex-grow flex flex-col" id="form-step-1">
+                                    <div className="mb-lg">
+                                        <h3 className="font-headline-md text-headline-md text-primary">Personal Information</h3>
+                                        <p className="font-body-md text-on-surface-variant">Tell us who you are. This information will help students identify you.</p>
+                                    </div>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-lg mb-xl">
+                                        <div className="flex flex-col gap-xs">
+                                            <label className="font-label-md text-label-md text-on-surface">Full Name</label>
+                                            <input className="rounded-xl border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-primary px-md py-sm outline-none transition-all" placeholder="e.g. Arpan Sharma" type="text" />
+                                        </div>
+                                        <div className="flex flex-col gap-xs">
+                                            <label className="font-label-md text-label-md text-on-surface">Email Address</label>
+                                            <input className="rounded-xl border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-primary px-md py-sm outline-none transition-all" placeholder="arpan.sharma@example.com" type="email" />
+                                        </div>
+                                        <div className="flex flex-col gap-xs">
+                                            <label className="font-label-md text-label-md text-on-surface">Phone Number</label>
+                                            <input className="rounded-xl border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-primary px-md py-sm outline-none transition-all" placeholder="+977 98XXXXXXXX" type="tel" />
+                                        </div>
+                                        <div className="flex flex-col gap-xs">
+                                            <label className="font-label-md text-label-md text-on-surface">Location (City)</label>
+                                            <select className="rounded-xl border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-primary px-md py-sm outline-none transition-all">
+                                                <option>Kathmandu</option>
+                                                <option>Lalitpur</option>
+                                                <option>Bhaktapur</option>
+                                                <option>Pokhara</option>
+                                                <option>Butwal</option>
+                                                <option>Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div className="mt-auto flex justify-end">
+                                        <button className="bg-primary text-on-primary px-xxl py-sm rounded-xl font-bold flex items-center gap-sm shadow-md hover:translate-x-1 active:scale-95 transition-all" onClick={() => nextStep(2)}>
+                                            Next Step
+                                            <span className="material-symbols-outlined">arrow_forward</span>
+                                        </button>
+                                    </div>
+                                </section>
+                                {/* Form Step 2: Educational Background */}
+                                <section className="step-transition hidden opacity-0 flex-grow flex flex-col" id="form-step-2">
+                                    <div className="mb-lg">
+                                        <h3 className="font-headline-md text-headline-md text-primary">Educational Background</h3>
+                                        <p className="font-body-md text-on-surface-variant">Your credentials establish trust with students and parents.</p>
+                                    </div>
+                                    <div className="flex flex-col gap-lg mb-xl">
+                                        <div className="flex flex-col gap-xs">
+                                            <label className="font-label-md text-label-md text-on-surface">Highest Qualification</label>
+                                            <select className="rounded-xl border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-primary px-md py-sm outline-none transition-all">
+                                                <option>Ph.D. / Doctorate</option>
+                                                <option>Master's Degree</option>
+                                                <option>Bachelor's Degree</option>
+                                                <option>Higher Secondary (10+2)</option>
+                                            </select>
+                                        </div>
+                                        <div className="flex flex-col gap-xs">
+                                            <label className="font-label-md text-label-md text-on-surface">Institution Name</label>
+                                            <input className="rounded-xl border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-primary px-md py-sm outline-none transition-all" placeholder="e.g. Tribhuvan University" type="text" />
+                                        </div>
+                                        <div className="flex flex-col gap-xs">
+                                            <label className="font-label-md text-label-md text-on-surface">Major / Field of Study</label>
+                                            <input className="rounded-xl border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-primary px-md py-sm outline-none transition-all" placeholder="e.g. Physics, Applied Mathematics" type="text" />
+                                        </div>
+                                        <div className="p-lg bg-surface-container-high rounded-xl border border-dashed border-primary/30 flex items-center justify-center cursor-pointer hover:bg-surface-variant transition-colors">
+                                            <div className="flex flex-col items-center gap-xs">
+                                                <span className="material-symbols-outlined text-primary text-3xl">upload_file</span>
+                                                <span className="font-label-md text-primary">Upload Degree Certificate (PDF/JPG)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="mt-auto flex justify-between">
+                                        <button className="text-primary font-bold px-lg py-sm rounded-xl flex items-center gap-sm hover:bg-surface-container-low transition-all" onClick={() => nextStep(1)}>
+                                            <span className="material-symbols-outlined">arrow_back</span>
+                                            Back
+                                        </button>
+                                        <button className="bg-primary text-on-primary px-xxl py-sm rounded-xl font-bold flex items-center gap-sm shadow-md hover:translate-x-1 active:scale-95 transition-all" onClick={() => nextStep(3)}>
+                                            Next Step
+                                            <span className="material-symbols-outlined">arrow_forward</span>
+                                        </button>
+                                    </div>
+                                </section>
+                                {/* Form Step 3: Subjects of Expertise */}
+                                <section className="step-transition hidden opacity-0 flex-grow flex flex-col" id="form-step-3">
+                                    <div className="mb-lg">
+                                        <h3 className="font-headline-md text-headline-md text-primary">Subjects of Expertise</h3>
+                                        <p className="font-body-md text-on-surface-variant">Select the subjects you are comfortable teaching.</p>
+                                    </div>
+                                    <div className="flex flex-col gap-lg mb-xl">
+                                        <div className="flex flex-col gap-xs">
+                                            <label className="font-label-md text-label-md text-on-surface">Target Level</label>
+                                            <div className="flex flex-wrap gap-sm">
+                                                <button className="px-md py-sm rounded-full border border-primary bg-primary-container/20 text-primary font-bold text-sm">SEE / Class 10</button>
+                                                <button className="px-md py-sm rounded-full border border-outline text-on-surface-variant text-sm hover:border-primary transition-all">+2 Science</button>
+                                                <button className="px-md py-sm rounded-full border border-outline text-on-surface-variant text-sm hover:border-primary transition-all">+2 Management</button>
+                                                <button className="px-md py-sm rounded-full border border-outline text-on-surface-variant text-sm hover:border-primary transition-all">Undergraduate</button>
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-xs">
+                                            <label className="font-label-md text-label-md text-on-surface">Search & Add Subjects</label>
+                                            <div className="relative">
+                                                <input className="w-full rounded-xl border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-primary pl-12 pr-md py-sm outline-none transition-all" placeholder="Start typing (e.g. Mathematics, Nepali...)" type="text" />
+                                                <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-wrap gap-sm">
+                                            <div className="bg-primary/10 text-primary px-md py-sm rounded-lg flex items-center gap-xs">
+                                                <span className="text-sm font-bold">Advanced Physics</span>
+                                                <span className="material-symbols-outlined text-base cursor-pointer">close</span>
+                                            </div>
+                                            <div className="bg-primary/10 text-primary px-md py-sm rounded-lg flex items-center gap-xs">
+                                                <span className="text-sm font-bold">Calculus</span>
+                                                <span className="material-symbols-outlined text-base cursor-pointer">close</span>
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-xs">
+                                            <label className="font-label-md text-label-md text-on-surface">Years of Experience</label>
+                                            <input className="w-32 rounded-xl border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-primary px-md py-sm outline-none transition-all" placeholder="0" type="number" />
+                                        </div>
+                                    </div>
+                                    <div className="mt-auto flex justify-between">
+                                        <button className="text-primary font-bold px-lg py-sm rounded-xl flex items-center gap-sm hover:bg-surface-container-low transition-all" onClick={() => nextStep(2)}>
+                                            <span className="material-symbols-outlined">arrow_back</span>
+                                            Back
+                                        </button>
+                                        <button className="bg-primary text-on-primary px-xxl py-sm rounded-xl font-bold flex items-center gap-sm shadow-md hover:translate-x-1 active:scale-95 transition-all" onClick={() => nextStep(4)}>
+                                            Next Step
+                                            <span className="material-symbols-outlined">arrow_forward</span>
+                                        </button>
+                                    </div>
+                                </section>
+                                {/* Form Step 4: Teaching Mode */}
+                                <section className="step-transition hidden opacity-0 flex-grow flex flex-col" id="form-step-4">
+                                    <div className="mb-lg">
+                                        <h3 className="font-headline-md text-headline-md text-primary">Teaching Preference</h3>
+                                        <p className="font-body-md text-on-surface-variant">How do you prefer to interact with your students?</p>
+                                    </div>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-lg mb-xl">
+                                        {/* Online Mode */}
+                                        <label className="relative group cursor-pointer">
+                                            <input checked="" className="peer sr-only" name="teaching_mode" type="radio" />
+                                            <div className="h-full p-lg rounded-xl border-2 border-outline-variant bg-surface-container-lowest peer-checked:border-primary peer-checked:bg-primary-container/10 transition-all flex flex-col gap-md items-center text-center">
+                                                <div className="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                                                    <span className="material-symbols-outlined text-4xl">video_chat</span>
+                                                </div>
+                                                <div>
+                                                    <h4 className="font-bold text-on-surface">Online Sessions</h4>
+                                                    <p className="text-sm text-on-surface-variant">Use our built-in video classroom and whiteboard tools.</p>
+                                                </div>
+                                                <div className="mt-auto">
+                                                    <span className="material-symbols-outlined text-primary opacity-0 peer-checked:opacity-100">check_circle</span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        {/* Physical Mode */}
+                                        <label className="relative group cursor-pointer">
+                                            <input className="peer sr-only" name="teaching_mode" type="radio" />
+                                            <div className="h-full p-lg rounded-xl border-2 border-outline-variant bg-surface-container-lowest peer-checked:border-primary peer-checked:bg-primary-container/10 transition-all flex flex-col gap-md items-center text-center">
+                                                <div className="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                                                    <span className="material-symbols-outlined text-4xl">home_pin</span>
+                                                </div>
+                                                <div>
+                                                    <h4 className="font-bold text-on-surface">Physical / In-Person</h4>
+                                                    <p className="text-sm text-on-surface-variant">Visit the student's location or host at your own space.</p>
+                                                </div>
+                                                <div className="mt-auto">
+                                                    <span className="material-symbols-outlined text-primary opacity-0 peer-checked:opacity-100">check_circle</span>
+                                                </div>
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div className="flex flex-col gap-xs mb-xl">
+                                        <label className="font-label-md text-label-md text-on-surface">Expected Hourly Rate (NPR)</label>
+                                        <div className="flex items-center gap-md">
+                                            <input className="w-32 rounded-xl border-outline-variant bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:border-primary px-md py-sm outline-none transition-all" type="number" defaultValue="800" />
+                                            <span className="text-on-surface-variant font-body-md">Per Hour</span>
+                                        </div>
+                                    </div>
+                                    <div className="mt-auto flex justify-between">
+                                        <button className="text-primary font-bold px-lg py-sm rounded-xl flex items-center gap-sm hover:bg-surface-container-low transition-all" onClick={() => nextStep(3)}>
+                                            <span className="material-symbols-outlined">arrow_back</span>
+                                            Back
+                                        </button>
+                                        <button className="bg-primary text-on-primary px-xxl py-sm rounded-xl font-extrabold flex items-center gap-sm shadow-lg hover:scale-105 active:scale-95 transition-all">
+                                            Complete Registration
+                                            <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>task_alt</span>
+                                        </button>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                {/* Footer (Shared Component) */}
+                <footer className="bg-surface-container-highest border-t border-outline-variant w-full mt-xxl">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-xl px-lg md:px-xxl py-xxl max-w-container-max mx-auto">
+                        <div className="flex flex-col gap-md">
+                            <h4 className="font-headline-md text-headline-md font-bold text-primary">TutorConnect</h4>
+                            <p className="text-on-surface-variant text-body-md">Connecting Nepal's best educators with ambitious students. Professional, reliable, and accessible education for all.</p>
+                        </div>
+                        <div className="flex flex-col gap-md">
+                            <h5 className="font-bold text-on-surface">Explore</h5>
+                            <ul className="flex flex-col gap-sm">
+                                <li><a className="text-on-surface-variant hover:text-primary transition-colors" href="#">Find Tutors</a></li>
+                                <li><a className="text-on-surface-variant hover:text-primary transition-colors" href="#">Safety Guide</a></li>
+                                <li><a className="text-on-surface-variant hover:text-primary transition-colors" href="#">Success Stories</a></li>
+                            </ul>
+                        </div>
+                        <div className="flex flex-col gap-md">
+                            <h5 className="font-bold text-on-surface">Support</h5>
+                            <ul className="flex flex-col gap-sm">
+                                <li><a className="text-on-surface-variant hover:text-primary transition-colors" href="#">About Us</a></li>
+                                <li><a className="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+                                <li><a className="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+                                <li><a className="text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Support</a></li>
+                            </ul>
+                        </div>
+                        <div className="flex flex-col gap-md">
+                            <h5 className="font-bold text-on-surface">Newsletter</h5>
+                            <div className="flex gap-xs">
+                                <input className="w-full bg-surface-container-low border border-outline-variant rounded-lg px-md py-xs text-sm" placeholder="Email" type="email" />
+                                <button className="bg-primary text-on-primary px-md py-xs rounded-lg font-bold text-sm">Join</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="px-lg md:px-xxl py-lg border-t border-outline-variant max-w-container-max mx-auto flex justify-center">
+                        <p className="text-on-surface-variant text-label-sm">© 2024 TutorConnect Nepal. All rights reserved.</p>
+                    </div>
+                </footer>
+                <script>{`
+                    function nextStep(step) {
+                        // Hide all sections
+                        document.querySelectorAll('section[id^="form-step-"]').forEach(el => {
+                            el.classList.add('hidden');
+                            el.classList.remove('opacity-100');
+                            el.classList.add('opacity-0');
+                        });
+
+                        // Show current step section
+                        const currentSection = document.getElementById('form-step-' + step);
+                        currentSection.classList.remove('hidden');
+                        setTimeout(() => {
+                            currentSection.classList.remove('opacity-0');
+                            currentSection.classList.add('opacity-100');
+                        }, 50);
+
+                        // Update Progress Steps Visuals
+                        document.querySelectorAll('#progress-steps > div[data-step]').forEach(el => {
+                            const s = parseInt(el.getAttribute('data-step'));
+                            const indicator = document.getElementById('step-indicator-' + s);
+                            
+                            if (s === step) {
+                                el.classList.remove('opacity-50');
+                                el.querySelector('span:first-child').classList.add('text-primary', 'font-bold');
+                                indicator.classList.add('bg-primary', 'text-on-primary', 'border-primary');
+                                indicator.classList.remove('border-outline', 'text-outline', 'bg-primary-container');
+                            } else if (s < step) {
+                                el.classList.remove('opacity-50');
+                                el.querySelector('span:first-child').classList.remove('text-primary');
+                                indicator.classList.add('bg-primary-container', 'text-on-primary-container', 'border-primary-container');
+                                indicator.innerHTML = '<span class="material-symbols-outlined text-sm">check</span>';
+                            } else {
+                                el.classList.add('opacity-50');
+                                el.querySelector('span:first-child').classList.remove('text-primary', 'font-bold');
+                                indicator.classList.add('border-outline', 'text-outline');
+                                indicator.classList.remove('bg-primary', 'text-on-primary', 'border-primary', 'bg-primary-container');
+                                indicator.innerHTML = s;
+                            }
+                        });
+                    }
+                `}</script>
+            </body>
+        </html>
+    );
+};
+
+export default JoinAsTutor;

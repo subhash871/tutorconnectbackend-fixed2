@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+*.sqlite3
+db.sqlite3
+tutorconnect_dev.sqlite3
+/venv/
+/env/
+/.venv/
+*.log
+/logs/*.log
+/staticfiles/
+/media/
+.DS_Store
+.vscode/
+.idea/
+*.egg-info/
