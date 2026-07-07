@@ -12,11 +12,16 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
       {"type": "message", "content": "..."}
       {"type": "typing", "is_typing": true}
       {"type": "read"}
+      {"type": "call_offer", "payload": {...}}
+      {"type": "call_answer", "payload": {...}}
+      {"type": "ice_candidate", "payload": {...}}
+      {"type": "call_end", "payload": {...}}
 
     Server -> client events:
       {"type": "message", "message": {...}}
       {"type": "typing", "user_id": N, "is_typing": true}
       {"type": "read", "user_id": N}
+      {"type": "call_offer"/"call_answer"/"ice_candidate"/"call_end", "from_user": N, "payload": {...}}
       {"type": "error", "detail": "..."}
     """
 
@@ -68,6 +73,14 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
                 'user_id': self.user.id,
             })
 
+        elif event_type in ('call_offer', 'call_answer', 'ice_candidate', 'call_end'):
+            await self.channel_layer.group_send(self.group_name, {
+                'type': 'chat.signal',
+                'signal_type': event_type,
+                'from_user': self.user.id,
+                'payload': content.get('payload'),
+            })
+
     # --- group event handlers (renamed per Channels' dot-to-underscore rule) ---
 
     async def chat_message(self, event):
@@ -80,6 +93,15 @@ class ChatConsumer(AsyncJsonWebsocketConsumer):
 
     async def chat_read(self, event):
         await self.send_json({'type': 'read', 'user_id': event['user_id']})
+
+    async def chat_signal(self, event):
+        if event['from_user'] == self.user.id:
+            return
+        await self.send_json({
+            'type': event['signal_type'],
+            'from_user': event['from_user'],
+            'payload': event['payload'],
+        })
 
     # --- DB helpers ---
 

@@ -10,7 +10,7 @@ from apps.bookings.serializers import (
 )
 from apps.common.permissions import IsStudent, IsTeacher
 from apps.notifications.tasks import create_notification
-
+from apps.chat.models import Conversation 
 
 class BookingViewSet(viewsets.ModelViewSet):
     """
@@ -71,6 +71,10 @@ class BookingViewSet(viewsets.ModelViewSet):
         booking.status = 'accepted'
         booking.accepted_at = timezone.now()
         booking.save()
+
+        conversation, created = Conversation.objects.get_or_create(booking=booking)
+        if created:
+            conversation.participants.add(booking.student, booking.teacher)
         create_notification.delay(
             booking.student_id, 'booking_accepted', 'Booking accepted',
             f'{booking.teacher.get_full_name()} accepted your booking request.',
