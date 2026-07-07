@@ -122,6 +122,15 @@ if config('USE_SQLITE', default=True, cast=bool):
             'NAME': BASE_DIR / 'tutorconnect_dev.sqlite3',
         }
     }
+elif config('DATABASE_URL', default=''):
+    # Render (and most PaaS providers) inject a single DATABASE_URL
+    import dj_database_url
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=config('DATABASE_URL'),
+            conn_max_age=600,
+        )
+    }
 else:
     DATABASES = {
         'default': {
@@ -271,12 +280,10 @@ SPECTACULAR_SETTINGS = {
 }
 
 # CORS Configuration
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-]
+CORS_ALLOWED_ORIGINS = config(
+    'CORS_ALLOWED_ORIGINS',
+    default='http://localhost:3000,http://127.0.0.1:3000,http://localhost:5173,http://127.0.0.1:5173'
+).split(',')
 CORS_ALLOW_CREDENTIALS = True
 
 # Redis Configuration
@@ -403,6 +410,11 @@ LOGGING = {
 }
 
 # Security Settings
+# Render (and most PaaS) terminate TLS at the edge and forward plain HTTP
+# with an X-Forwarded-Proto header. Without this, Django can't tell the
+# original request was HTTPS, causing a redirect loop with SECURE_SSL_REDIRECT.
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 if not DEBUG:
     SECURE_SSL_REDIRECT = True
     SESSION_COOKIE_SECURE = True
