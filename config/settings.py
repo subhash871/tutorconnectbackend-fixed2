@@ -320,7 +320,7 @@ CELERY_TASK_TIME_LIMIT = 30 * 60
 # No separate Celery worker service is deployed, so run tasks synchronously
 # in-process instead of depending on a message broker.
 CELERY_TASK_ALWAYS_EAGER = True
-CELERY_TASK_EAGER_PROPAGATES = True  # TEMP: diagnosing Resend email issue
+CELERY_TASK_EAGER_PROPAGATES = False
 
 # Channels Configuration (WebSocket)
 CHANNEL_LAYERS = {
