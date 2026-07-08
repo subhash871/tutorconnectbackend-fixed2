@@ -202,9 +202,22 @@ class TeacherGalleryViewSet(viewsets.ModelViewSet):
 
 class AvailabilityCalendarViewSet(viewsets.ModelViewSet):
     serializer_class = AvailabilityCalendarSerializer
-    permission_classes = [IsAuthenticated, IsTeacher]
+
+    def get_permissions(self):
+        if self.action in ['list', 'retrieve']:
+            permission_classes = [AllowAny]
+        else:
+            permission_classes = [IsAuthenticated, IsTeacher]
+        return [p() for p in permission_classes]
 
     def get_queryset(self):
+        if self.action in ['list', 'retrieve']:
+            queryset = AvailabilityCalendar.objects.all()
+            teacher_id = self.request.query_params.get('teacher') or self.request.query_params.get('teacher_id')
+            if teacher_id:
+                queryset = queryset.filter(teacher_id=teacher_id)
+            return queryset
+        # Write actions: teachers can only see/modify their own availability
         return AvailabilityCalendar.objects.filter(teacher__user=self.request.user)
 
     def perform_create(self, serializer):
