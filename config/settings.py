@@ -342,6 +342,7 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 EMAIL_TIMEOUT = 10  # seconds; fail fast instead of hanging on bad SMTP config
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='noreply@tutorconnectnepal.com')
 RESEND_API_KEY = config('RESEND_API_KEY', default='')
+BREVO_API_KEY = config('BREVO_API_KEY', default='')
 FRONTEND_URL = config('FRONTEND_URL', default='http://localhost:3000')
 
 # Payment Gateway Configuration
