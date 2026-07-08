@@ -47,3 +47,49 @@ class IPv4EmailBackend(DjangoSMTPBackend):
             if not self.fail_silently:
                 raise
             return False
+
+
+class ResendEmailBackend:
+    """
+    Minimal Django email backend using the Resend HTTP API
+    (https://resend.com). Render (and many PaaS providers) block
+    outbound SMTP ports entirely on free tiers, so SMTP-based sending
+    cannot work there. Resend sends over plain HTTPS (port 443),
+    which is never blocked.
+
+    Requires RESEND_API_KEY to be set.
+    """
+
+    def __init__(self, fail_silently=False, **kwargs):
+        self.fail_silently = fail_silently
+
+    def send_messages(self, email_messages):
+        import requests
+        from django.conf import settings
+
+        api_key = getattr(settings, 'RESEND_API_KEY', '')
+        if not api_key:
+            if self.fail_silently:
+                return 0
+            raise ValueError('RESEND_API_KEY is not set.')
+
+        sent_count = 0
+        for message in email_messages:
+            try:
+                response = requests.post(
+                    'https://api.resend.com/emails',
+                    headers={'Authorization': f'Bearer {api_key}'},
+                    json={
+                        'from': message.from_email,
+                        'to': message.to,
+                        'subject': message.subject,
+                        'text': message.body,
+                    },
+                    timeout=10,
+                )
+                response.raise_for_status()
+                sent_count += 1
+            except Exception:
+                if not self.fail_silently:
+                    raise
+        return sent_count

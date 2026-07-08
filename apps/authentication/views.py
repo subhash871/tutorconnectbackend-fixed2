@@ -39,9 +39,13 @@ def register(request):
     # Generate OTP for email verification
     otp = OTPService.generate_otp(user, 'email_verification')
     
-    # Send verification email (async task)
+    # Send verification email (best-effort — don't fail registration if
+    # the email provider has a problem; the user can request a resend)
     from apps.notifications.tasks import send_email_verification
-    send_email_verification.delay(user.id, otp.otp)
+    try:
+        send_email_verification.delay(user.id, otp.otp)
+    except Exception:
+        pass
     
     return Response({
         'success': True,

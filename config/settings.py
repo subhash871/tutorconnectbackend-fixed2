@@ -320,7 +320,7 @@ CELERY_TASK_TIME_LIMIT = 30 * 60
 # No separate Celery worker service is deployed, so run tasks synchronously
 # in-process instead of depending on a message broker.
 CELERY_TASK_ALWAYS_EAGER = True
-CELERY_TASK_EAGER_PROPAGATES = True  # TEMP: surface errors to diagnose email issue
+CELERY_TASK_EAGER_PROPAGATES = False
 
 # Channels Configuration (WebSocket)
 CHANNEL_LAYERS = {
@@ -341,6 +341,7 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 EMAIL_TIMEOUT = 10  # seconds; fail fast instead of hanging on bad SMTP config
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default='noreply@tutorconnectnepal.com')
+RESEND_API_KEY = config('RESEND_API_KEY', default='')
 FRONTEND_URL = config('FRONTEND_URL', default='http://localhost:3000')
 
 # Payment Gateway Configuration
