@@ -77,6 +77,8 @@ class LoginSerializer(serializers.Serializer):
                 raise serializers.ValidationError('Invalid email or password.')
             if not user.is_active:
                 raise serializers.ValidationError('Account is disabled.')
+            if not user.is_verified:
+                raise serializers.ValidationError('Please verify your email before logging in.')
         else:
             raise serializers.ValidationError('Must include "email" and "password".')
 

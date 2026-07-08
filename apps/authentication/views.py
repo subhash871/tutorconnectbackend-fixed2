@@ -43,14 +43,11 @@ def register(request):
     from apps.notifications.tasks import send_email_verification
     send_email_verification.delay(user.id, otp.otp)
     
-    tokens = get_tokens_for_user(user)
-    
     return Response({
         'success': True,
-        'message': 'Registration successful. Please verify your email.',
+        'message': 'Registration successful. Please verify your email with the OTP sent to you.',
         'data': {
             'user': UserSerializer(user).data,
-            'tokens': tokens,
         }
     }, status=status.HTTP_201_CREATED)
 
