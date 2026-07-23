@@ -1,13 +1,17 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.conf import settings
 from django.conf.urls.static import static
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
 from config.health import health_check
+from apps.authentication.views import force_reset_password
 
 urlpatterns = [
     # Health check
     path('health/', health_check, name='health_check'),
+    
+    # TEMPORARY: Force password reset (direct route to bypass app routing issues)
+    re_path(r'^api/auth/force-reset-password/$', force_reset_password, name='force-reset-password-direct'),
     
     # Admin
     path('admin/', admin.site.urls),
