@@ -85,6 +85,25 @@ class TeacherProfileViewSet(viewsets.ModelViewSet):
         # For update/delete, only own profile
         return queryset.filter(user=user)
 
+    def perform_create(self, serializer):
+        serializer.save()
+        user = self.request.user
+        if not user.is_teacher_approved:
+            user.is_teacher_approved = True
+            user.save(update_fields=['is_teacher_approved'])
+            from apps.notifications.tasks import create_notification
+            create_notification.delay(
+                user.id, 'teacher_approved', 'Profile approved!',
+                'Your tutor profile has been automatically approved. You are now visible to students when availability is on.',
+            )
+
+    def perform_update(self, serializer):
+        serializer.save()
+        user = self.request.user
+        if not user.is_teacher_approved:
+            user.is_teacher_approved = True
+            user.save(update_fields=['is_teacher_approved'])
+
     @action(detail=False, methods=['get', 'put', 'patch'])
     def my_profile(self, request):
         """Get or update the current teacher's profile."""
@@ -108,6 +127,18 @@ class TeacherProfileViewSet(viewsets.ModelViewSet):
         )
         serializer.is_valid(raise_exception=True)
         serializer.save()
+        
+        # Auto-approve teacher when they complete/update their profile
+        user = request.user
+        if not user.is_teacher_approved:
+            user.is_teacher_approved = True
+            user.save(update_fields=['is_teacher_approved'])
+            from apps.notifications.tasks import create_notification
+            create_notification.delay(
+                user.id, 'teacher_approved', 'Profile approved!',
+                'Your tutor profile has been automatically approved. You are now visible to students when availability is on.',
+            )
+        
         return Response(TeacherProfileDetailSerializer(profile).data)
 
     @action(detail=True, methods=['post'])
