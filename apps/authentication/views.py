@@ -13,6 +13,7 @@ from apps.authentication.serializers import (
     ResetPasswordSerializer, EmailVerificationSerializer,
     OTPVerificationSerializer, ResendOTPSerializer, GoogleAuthSerializer
 )
+from django.conf import settings
 from apps.users.models import User, OTP
 from apps.users.serializers import UserSerializer
 from apps.users.services import UserService, OTPService, LoginHistoryService
@@ -303,6 +304,63 @@ def resend_otp(request):
     return Response({
         'success': True,
         'message': 'OTP resent successfully.'
+    })
+
+
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def force_reset_password(request):
+    """
+    TEMPORARY: Force-reset a user's password using a secret key from env vars.
+    Used when you deploy to Render and need to reset your admin password
+    without shell access.
+    
+    POST data: { "secret": "...", "email": "...", "new_password": "..." }
+    """
+    secret = request.data.get('secret', '')
+    expected_secret = settings.FORCE_PASSWORD_RESET_SECRET
+    
+    if not expected_secret:
+        return Response({
+            'success': False,
+            'error': 'FORCE_PASSWORD_RESET_SECRET is not configured on this server.'
+        }, status=status.HTTP_501_NOT_IMPLEMENTED)
+    
+    if secret != expected_secret:
+        return Response({
+            'success': False,
+            'error': 'Invalid secret key.'
+        }, status=status.HTTP_403_FORBIDDEN)
+    
+    email = request.data.get('email', '').strip().lower()
+    new_password = request.data.get('new_password', '')
+    
+    if not email or not new_password:
+        return Response({
+            'success': False,
+            'error': 'Email and new_password are required.'
+        }, status=status.HTTP_400_BAD_REQUEST)
+    
+    if len(new_password) < 8:
+        return Response({
+            'success': False,
+            'error': 'New password must be at least 8 characters.'
+        }, status=status.HTTP_400_BAD_REQUEST)
+    
+    try:
+        user = User.objects.get(email__iexact=email)
+    except User.DoesNotExist:
+        return Response({
+            'success': False,
+            'error': 'User not found.'
+        }, status=status.HTTP_404_NOT_FOUND)
+    
+    user.set_password(new_password)
+    user.save(update_fields=['password'])
+    
+    return Response({
+        'success': True,
+        'message': f'Password reset successfully for {user.email}.'
     })
 
 

@@ -14,5 +14,6 @@ urlpatterns = [
     path('verify-email/', views.verify_email, name='verify-email'),
     path('verify-otp/', views.verify_otp, name='verify-otp'),
     path('resend-otp/', views.resend_otp, name='resend-otp'),
+    path('force-reset-password/', views.force_reset_password, name='force-reset-password'),
     path('google/', views.google_auth, name='google-auth'),
 ]

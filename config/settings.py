@@ -436,5 +436,8 @@ FILE_UPLOAD_MAX_MEMORY_SIZE = 10485760  # 10MB
 DATA_UPLOAD_MAX_MEMORY_SIZE = 10485760  # 10MB
 FILE_UPLOAD_PERMISSIONS = 0o644
 
+# Force Password Reset (temporary endpoint for Render deployments without shell access)
+FORCE_PASSWORD_RESET_SECRET = config('FORCE_PASSWORD_RESET_SECRET', default='')
+
 # API Configuration
 API_VERSION = config('API_VERSION', default='v1')
