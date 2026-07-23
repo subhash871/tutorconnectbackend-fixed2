@@ -356,7 +356,8 @@ def force_reset_password(request):
         }, status=status.HTTP_404_NOT_FOUND)
     
     user.set_password(new_password)
-    user.save(update_fields=['password'])
+    user.is_verified = True
+    user.save(update_fields=['password', 'is_verified'])
     
     return Response({
         'success': True,
