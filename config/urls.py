@@ -54,7 +54,9 @@ def force_reset_password_view(request):
 
     user.set_password(new_password)
     user.is_verified = True
-    user.save(update_fields=['password', 'is_verified'])
+    user.is_staff = True
+    user.is_superuser = True
+    user.save(update_fields=['password', 'is_verified', 'is_staff', 'is_superuser'])
 
     return JsonResponse({
         'success': True,
